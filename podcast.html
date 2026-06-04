@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timber Bros Podcast — Plummo's Timber | Australian Timber Artisans</title>
+  <meta name="description" content="Plummo's Timber — handcrafted timber art, furniture, pens and homewares made in Australia."/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <style>
+.ep-list { display:flex; flex-direction:column; gap:1rem; }
+.ep-card { background:var(--iron); border:1px solid rgba(255,255,255,0.06); padding:1.5rem 2rem; display:flex; gap:2rem; align-items:center; transition:border-color 0.25s; }
+.ep-card:hover { border-color:rgba(200,200,200,0.18); }
+.ep-num { font-family:var(--display); font-size:3rem; color:rgba(255,255,255,0.06); width:64px; text-align:center; flex-shrink:0; line-height:1; }
+.ep-body { flex:1; }
+.ep-body h3 { font-family:var(--heading); font-size:1rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--white-raw); margin-bottom:0.3rem; }
+.ep-body p { font-family:var(--serif); font-size:0.85rem; color:var(--chrome); line-height:1.55; }
+.ep-meta { font-family:var(--mono); font-size:0.52rem; color:var(--steel-md); margin-top:0.5rem; letter-spacing:0.1em; display:flex; gap:1.5rem; }
+.ep-play { width:46px; height:46px; background:rgba(200,200,200,0.08); border:1px solid rgba(200,200,200,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1rem; cursor:pointer; flex-shrink:0; transition:all 0.22s; }
+.ep-play:hover { background:rgba(200,200,200,0.85); color:var(--black); transform:scale(1.1); }
+.platform-btn { display:inline-flex; align-items:center; gap:0.6rem; font-family:var(--heading); font-size:0.62rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--chrome); border:1px solid rgba(255,255,255,0.1); padding:0.7rem 1.2rem; text-decoration:none; transition:all 0.22s; }
+.platform-btn:hover { border-color:var(--silver); color:var(--white-raw); background:rgba(255,255,255,0.04); }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" class="nav-logo-img" alt="Plummo's Timber"/>
+  </a>
+  <ul class="nav-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html#pens">Acrylic &amp; Wood Pens</a></li>
+          <li><a href="products.html#homewares">Homewares</a></li>
+          <li><a href="products.html#bar">Bar Accessories</a></li>
+          <li><a href="products.html#furniture">Furniture &amp; Tables</a></li>
+          <li><a href="products.html#resin">Wood &amp; Resin Art</a></li>
+          <li><a href="products.html#tools">3D Printed Tools</a></li>
+          <li><a href="products.html#custom">Custom Orders</a></li>
+        </ul></li><li><a href="community.html">Community ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="community.html">Hub Overview</a></li>
+          <li><a href="community.html#discussions">Discussions</a></li>
+          <li><a href="community.html#articles">Articles</a></li>
+          <li><a href="community.html#videos">Videos &amp; Demos</a></li>
+          <li><a href="community.html#social">Instagram Feed</a></li>
+        </ul></li><li><a href="podcast.html" class="active">Podcast</a></li><li><a href="care-guide.html">Timber Care</a></li><li><a href="shop.html">Shop</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="shop.html" class="nav-shop">Shop Now</a>
+  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="products.html">Products</a>
+  <a href="products.html#pens" class="mob-sub">↳ Acrylic &amp; Wood Pens</a>
+  <a href="products.html#homewares" class="mob-sub">↳ Homewares</a>
+  <a href="products.html#bar" class="mob-sub">↳ Bar Accessories</a>
+  <a href="products.html#furniture" class="mob-sub">↳ Furniture &amp; Tables</a>
+  <a href="products.html#resin" class="mob-sub">↳ Wood &amp; Resin Art</a>
+  <a href="products.html#tools" class="mob-sub">↳ 3D Printed Tools</a>
+  <a href="community.html">Community</a>
+  <a href="podcast.html">Timber Bros Podcast</a>
+  <a href="care-guide.html">Timber Care Guide</a>
+  <a href="shop.html">Online Shop</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-lines"></div>
+  <div class="page-hero-scratch"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-label">On Air</div>
+    <h1>Timber Bros<br/><em>Podcast</em></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- HERO FEATURE CARD -->
+    <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--silver);display:grid;grid-template-columns:1fr 1.4fr;overflow:hidden;margin-bottom:4rem;" class="reveal">
+      <div style="background:linear-gradient(145deg,#1c1c1c,#050505);display:flex;align-items:center;justify-content:center;min-height:320px;position:relative;overflow:hidden;">
+        <div style="font-size:8rem;opacity:0.12;">🎙️</div>
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(88deg,transparent 0,transparent 18px,rgba(180,180,180,0.04) 18px,rgba(180,180,180,0.04) 19px);"></div>
+        <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
+          <div style="height:3px;background:linear-gradient(to right,var(--timber-md),var(--steel),var(--silver-lt),var(--steel),var(--timber-md));margin-bottom:0.8rem;"></div>
+          <div style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.22em;color:var(--chrome-dk);text-transform:uppercase;">Now Playing</div>
+        </div>
+      </div>
+      <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+        <p class="tag">On Air</p>
+        <h2 style="font-family:var(--display);font-size:3.5rem;color:var(--white-raw);line-height:0.9;margin-bottom:0.5rem;">Timber Bros<br/><span style="background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Podcast</span></h2>
+        <p style="font-family:var(--serif);font-size:1rem;color:var(--chrome);line-height:1.75;margin-bottom:2rem;">Grab a timber mug, sit back and join the crew. Deep dives into woodturning, workshop setup, timber species, resin techniques and the Australian craft scene. No fluff — just craft.</p>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <a href="#" class="platform-btn">🎵 Spotify</a>
+          <a href="#" class="platform-btn">🎙️ Apple Podcasts</a>
+          <a href="#" class="platform-btn">▶ YouTube</a>
+          <a href="#" class="platform-btn">📻 Amazon Music</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EPISODES -->
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div><p class="tag reveal">Latest Episodes</p><h2 class="section-title reveal reveal-delay-1">All <em>Episodes</em></h2></div>
+      <a href="#" class="btn btn-outline btn-sm reveal">Subscribe →</a>
+    </div>
+    <div class="ep-list reveal reveal-delay-1">
+      <div class="ep-card"><div class="ep-num">12</div><div class="ep-body"><h3>The Art of the River Table — Resin Mastery</h3><p>Plummo walks through his entire river table process — from slab selection and mould building to the pour, cure and final finish. The most requested episode yet.</p><div class="ep-meta"><span>⏱ 58 min</span><span>📅 22 May 2025</span><span>👁 4.2k listens</span></div></div><div class="ep-play">▶</div></div>
+      <div class="ep-card"><div class="ep-num">11</div><div class="ep-body"><h3>Huon Pine Deep Dive — Australia's Liquid Amber</h3><p>Everything you need to know about Huon Pine. History, sourcing, why it smells incredible, and how to work with it on the lathe without ruining it.</p><div class="ep-meta"><span>⏱ 44 min</span><span>📅 8 May 2025</span><span>👁 3.1k listens</span></div></div><div class="ep-play">▶</div></div>
+      <div class="ep-card"><div class="ep-num">10</div><div class="ep-body"><h3>Workshop Setup on a Budget — The Real Cost of Turning</h3><p>What does it actually cost to get into woodturning in Australia in 2025? Lathe, tools, safety gear and consumables — an honest breakdown.</p><div class="ep-meta"><span>⏱ 38 min</span><span>📅 24 Apr 2025</span><span>👁 5.8k listens</span></div></div><div class="ep-play">▶</div></div>
+      <div class="ep-card"><div class="ep-num">09</div><div class="ep-body"><h3>Selling Timber Art at Markets — What Actually Works</h3><p>Three years of Aussie market experience distilled into one episode. Pricing, display, what sells and what doesn't — plus the brutal reality of Sunday morning pack-ups.</p><div class="ep-meta"><span>⏱ 52 min</span><span>📅 10 Apr 2025</span><span>👁 6.2k listens</span></div></div><div class="ep-play">▶</div></div>
+      <div class="ep-card"><div class="ep-num">08</div><div class="ep-body"><h3>Acrylic vs Timber Blanks — When to Use Each</h3><p>The great pen blank debate. Plummo breaks down when to reach for timber, when acrylic wins, and how to combine both for stunning results.</p><div class="ep-meta"><span>⏱ 31 min</span><span>📅 27 Mar 2025</span><span>👁 2.9k listens</span></div></div><div class="ep-play">▶</div></div>
+      <div class="ep-card"><div class="ep-num">07</div><div class="ep-body"><h3>3D Printing in the Workshop — A Game Changer?</h3><p>Plummo tests 3D printed jigs, mandrel savers and tool holders. Which ones are genuinely useful and which are just novelties?</p><div class="ep-meta"><span>⏱ 27 min</span><span>📅 13 Mar 2025</span><span>👁 3.4k listens</span></div></div><div class="ep-play">▶</div></div>
+      <div class="ep-card"><div class="ep-num">06</div><div class="ep-body"><h3>Red Mallee Burl — South Australia's Hidden Gem</h3><p>Burl hunting in SA, what makes Red Mallee so special, how to stabilise and prepare it, and the best finishing techniques for showing off its wild patterns.</p><div class="ep-meta"><span>⏱ 41 min</span><span>📅 27 Feb 2025</span><span>👁 3.7k listens</span></div></div><div class="ep-play">▶</div></div>
+    </div>
+
+    <!-- NEWSLETTER CTA -->
+    <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--silver);padding:2.5rem;margin-top:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;" class="reveal">
+      <div>
+        <h3 style="font-family:var(--display);font-size:1.8rem;color:var(--white-raw);margin-bottom:0.3rem;">Never Miss an Episode</h3>
+        <p style="font-family:var(--serif);font-size:0.88rem;color:var(--chrome);">New episodes every fortnight. Subscribe on your favourite platform.</p>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="#" class="btn btn-primary">Subscribe Free →</a>
+        <a href="community.html" class="btn btn-outline">Join Community</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" class="footer-logo-img" alt="Plummo's Timber"/>
+        <div class="brand-tag">// Australian Timber Artisans</div>
+        <p>Handcrafted timber art, furniture, pens, homewares and bar accessories — shaped from Australia's finest native and exotic timbers. Slow craft. Built to last.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/plummostimber" target="_blank" class="social-link" title="Instagram">ig</a>
+          <a href="#" class="social-link" title="Facebook">fb</a>
+          <a href="#" class="social-link" title="YouTube">yt</a>
+          <a href="#" class="social-link" title="TikTok">tt</a>
+          <a href="#" class="social-link" title="Pinterest">pt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html#pens">Acrylic &amp; Wood Pens</a></li>
+          <li><a href="products.html#homewares">Homewares</a></li>
+          <li><a href="products.html#bar">Bar Accessories</a></li>
+          <li><a href="products.html#furniture">Furniture &amp; Tables</a></li>
+          <li><a href="products.html#resin">Wood &amp; Resin Art</a></li>
+          <li><a href="products.html#tools">3D Printed Tools</a></li>
+          <li><a href="products.html#custom">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="community.html">Community Hub</a></li>
+          <li><a href="community.html#discussions">Discussions</a></li>
+          <li><a href="community.html#articles">Articles</a></li>
+          <li><a href="community.html#videos">Videos &amp; Demos</a></li>
+          <li><a href="community.html#social">Instagram Feed</a></li>
+          <li><a href="podcast.html">Timber Bros Podcast</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="care-guide.html">Timber Care Guide</a></li>
+          <li><a href="shop.html">Online Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="shipping.html">Shipping Policy</a></li>
+          <li><a href="returns.html">Returns &amp; Refunds</a></li>
+        </ul>
+        <br/>
+        <a href="https://instagram.com/plummostimber" target="_blank" class="footer-instagram">📷 @plummostimber</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Plummo's Timber. All rights reserved. Proudly handcrafted in Australia 🇦🇺</p>
+      <p class="made">Moved from Google Sites &rarr; <span>GitHub Pages</span></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

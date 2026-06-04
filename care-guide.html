@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timber Care Guide — Plummo's Timber | Australian Timber Artisans</title>
+  <meta name="description" content="Plummo's Timber — handcrafted timber art, furniture, pens and homewares made in Australia."/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <style>
+.care-step { background:var(--iron); border:1px solid rgba(255,255,255,0.05); border-top:2px solid var(--steel); padding:2rem 1.5rem; transition:border-top-color 0.25s,transform 0.25s; }
+.care-step:hover { border-top-color:var(--silver-lt); transform:translateY(-3px); }
+.care-step-num { font-family:var(--display); font-size:3rem; color:rgba(255,255,255,0.06); line-height:1; margin-bottom:0.5rem; }
+.care-step-title { font-family:var(--heading); font-size:0.88rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--silver-lt); margin-bottom:0.6rem; }
+.care-step-body { font-family:var(--serif); font-size:0.85rem; color:var(--chrome); line-height:1.65; }
+.timber-species-row { display:flex; align-items:center; justify-content:space-between; padding:1.1rem 0; border-bottom:1px solid rgba(255,255,255,0.05); transition:background 0.2s; cursor:default; }
+.timber-species-row:first-child { border-top:1px solid rgba(255,255,255,0.05); }
+.timber-species-row:hover { background:rgba(255,255,255,0.02); margin:0 -1rem; padding:1.1rem 1rem; }
+.ts-name { font-family:var(--serif); font-size:1.1rem; color:var(--white-raw); }
+.ts-origin { font-family:var(--mono); font-size:0.56rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--chrome-dk); }
+.ts-dot { width:6px; height:6px; border-radius:50%; background:var(--grit); opacity:0; transition:opacity 0.22s; }
+.timber-species-row:hover .ts-dot { opacity:1; }
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" class="nav-logo-img" alt="Plummo's Timber"/>
+  </a>
+  <ul class="nav-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html#pens">Acrylic &amp; Wood Pens</a></li>
+          <li><a href="products.html#homewares">Homewares</a></li>
+          <li><a href="products.html#bar">Bar Accessories</a></li>
+          <li><a href="products.html#furniture">Furniture &amp; Tables</a></li>
+          <li><a href="products.html#resin">Wood &amp; Resin Art</a></li>
+          <li><a href="products.html#tools">3D Printed Tools</a></li>
+          <li><a href="products.html#custom">Custom Orders</a></li>
+        </ul></li><li><a href="community.html">Community ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="community.html">Hub Overview</a></li>
+          <li><a href="community.html#discussions">Discussions</a></li>
+          <li><a href="community.html#articles">Articles</a></li>
+          <li><a href="community.html#videos">Videos &amp; Demos</a></li>
+          <li><a href="community.html#social">Instagram Feed</a></li>
+        </ul></li><li><a href="podcast.html">Podcast</a></li><li><a href="care-guide.html" class="active">Timber Care</a></li><li><a href="shop.html">Shop</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="shop.html" class="nav-shop">Shop Now</a>
+  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="products.html">Products</a>
+  <a href="products.html#pens" class="mob-sub">↳ Acrylic &amp; Wood Pens</a>
+  <a href="products.html#homewares" class="mob-sub">↳ Homewares</a>
+  <a href="products.html#bar" class="mob-sub">↳ Bar Accessories</a>
+  <a href="products.html#furniture" class="mob-sub">↳ Furniture &amp; Tables</a>
+  <a href="products.html#resin" class="mob-sub">↳ Wood &amp; Resin Art</a>
+  <a href="products.html#tools" class="mob-sub">↳ 3D Printed Tools</a>
+  <a href="community.html">Community</a>
+  <a href="podcast.html">Timber Bros Podcast</a>
+  <a href="care-guide.html">Timber Care Guide</a>
+  <a href="shop.html">Online Shop</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-lines"></div>
+  <div class="page-hero-scratch"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-label">Care &amp; Maintenance</div>
+    <h1>Timber Care<br/><em>Guide</em></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:5rem;align-items:start;">
+      <div>
+        <p class="tag reveal">Ownership Guide</p>
+        <h2 class="section-title reveal reveal-delay-1">Keep Your Timber<br/><em>Looking Remarkable.</em></h2>
+        <p style="font-family:var(--serif);font-size:1rem;color:var(--chrome);line-height:1.85;margin-bottom:1.5rem;" class="reveal reveal-delay-2">Timber is a living material — it breathes, responds to humidity and develops character over time. With the right care, your Plummo's piece will outlast you.</p>
+        <div class="chrome-line"></div>
+        <div style="display:flex;flex-direction:column;gap:1rem;" class="reveal reveal-delay-3">
+          <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:rgba(255,255,255,0.02);border-left:2px solid var(--steel);">
+            <span style="font-size:1.5rem;opacity:0.7;flex-shrink:0;">⚠️</span>
+            <div><div style="font-family:var(--heading);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.3rem;">Never Submerge</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);">Do not soak timber pieces in water or put them through a dishwasher. This will crack and warp even the toughest timbers.</div></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:rgba(255,255,255,0.02);border-left:2px solid var(--steel);">
+            <span style="font-size:1.5rem;opacity:0.7;flex-shrink:0;">☀️</span>
+            <div><div style="font-family:var(--heading);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.3rem;">Avoid Direct Heat &amp; Sun</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);">Prolonged exposure to direct sunlight or heat sources like heaters causes fading, drying and cracking. Store away from windows.</div></div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:rgba(90,48,24,0.07);border-left:2px solid var(--timber-md);">
+            <span style="font-size:1.5rem;opacity:0.7;flex-shrink:0;">🫒</span>
+            <div><div style="font-family:var(--heading);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--grit);margin-bottom:0.3rem;">Oil Regularly</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);">Food-safe mineral oil or our Timber Board Butter every 3–6 months keeps the grain nourished and the lustre alive.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);padding:2.5rem;">
+          <div style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--chrome-dk);margin-bottom:1.5rem;">[ Timber Species We Use ]</div>
+          <div class="timber-species-rows">
+            <div class="timber-species-row"><span class="ts-name">Huon Pine</span><span class="ts-origin">Tasmania, AU</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Red Mallee Burl</span><span class="ts-origin">South Australia</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Black Wattle</span><span class="ts-origin">Eastern Australia</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Sheoak</span><span class="ts-origin">Western Australia</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Spotted Gum</span><span class="ts-origin">NSW &amp; Queensland</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Camphor Laurel</span><span class="ts-origin">Subtropical AU</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Banksia</span><span class="ts-origin">Australia-wide</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Mango</span><span class="ts-origin">Queensland, AU</span><span class="ts-dot"></span></div>
+            <div class="timber-species-row"><span class="ts-name">Silky Oak</span><span class="ts-origin">Eastern Australia</span><span class="ts-dot"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARE STEPS -->
+<section class="section" style="background:var(--charcoal);padding-top:3rem;">
+  <div class="container">
+    <p class="tag text-center reveal" style="justify-content:center;">Step by Step</p>
+    <h2 class="section-title text-center reveal reveal-delay-1" style="margin-bottom:3rem;">The Care <em>Process</em></h2>
+    <div class="grid-4 reveal reveal-delay-2">
+      <div class="care-step"><div class="care-step-num">01</div><div class="care-step-title">🧽 Clean</div><div class="care-step-body">Wipe with a soft, slightly damp cloth after use. Remove any food residue promptly. Never use abrasive sponges or chemical cleaners.</div></div>
+      <div class="care-step"><div class="care-step-num">02</div><div class="care-step-title">🫒 Oil</div><div class="care-step-body">Apply food-safe mineral oil or board butter every 3–6 months. Work it in with a soft cloth in the direction of the grain, leave 20 min, buff off excess.</div></div>
+      <div class="care-step"><div class="care-step-num">03</div><div class="care-step-title">📦 Store</div><div class="care-step-body">Store away from direct sun, heaters and air conditioning vents. Consistent humidity is your friend. A timber piece that dries out will crack.</div></div>
+      <div class="care-step"><div class="care-step-num">04</div><div class="care-step-title">🔧 Restore</div><div class="care-step-body">Light surface scratches can be removed with 400-grit sandpaper along the grain, followed by a re-oil. For deeper damage, contact us directly.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT-SPECIFIC CARE -->
+<section class="section">
+  <div class="container">
+    <p class="tag reveal">By Product Type</p>
+    <h2 class="section-title reveal reveal-delay-1" style="margin-bottom:2.5rem;">Product-Specific <em>Care</em></h2>
+    <div class="grid-3 reveal reveal-delay-2">
+      <div class="card" style="padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.7;">🖊️</div>
+        <h3 style="font-family:var(--heading);font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.8rem;">Pens &amp; Writing Instruments</h3>
+        <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;">CA-finished pens are highly durable — wipe with a soft cloth. Avoid leaving in direct sun in a hot car as heat can affect acrylic blanks. Re-polish with Brasso if the finish dulls.</p>
+      </div>
+      <div class="card" style="padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.7;">🏠</div>
+        <h3 style="font-family:var(--heading);font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.8rem;">Chopping Boards &amp; Homewares</h3>
+        <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;">Hand wash only — never dishwasher. Dry immediately after washing. Oil with food-safe mineral oil monthly if used frequently. Stand upright to dry, never flat on a wet surface.</p>
+      </div>
+      <div class="card" style="padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.7;">🍸</div>
+        <h3 style="font-family:var(--heading);font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.8rem;">Bar Accessories</h3>
+        <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;">Rinse muddlers immediately after use — citrus juices are acidic and will dull the finish over time. Dry promptly. Treat timber bottle stoppers with a light oil annually.</p>
+      </div>
+      <div class="card" style="padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.7;">🌊</div>
+        <h3 style="font-family:var(--heading);font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.8rem;">Resin Art &amp; Decor</h3>
+        <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;">Resin pieces are very low maintenance. Wipe with a damp cloth. Avoid sharp impacts on resin edges. Keep out of prolonged UV exposure as it can yellow clear resin over time.</p>
+      </div>
+      <div class="card" style="padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.7;">🪑</div>
+        <h3 style="font-family:var(--heading);font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.8rem;">Furniture &amp; Tables</h3>
+        <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;">Use coasters and placemats. Wipe spills immediately. Polish with furniture wax twice a year. For oil-finished tables, re-apply Danish or linseed oil seasonally to keep the grain fed.</p>
+      </div>
+      <div class="card" style="padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.7;">⚙️</div>
+        <h3 style="font-family:var(--heading);font-size:0.9rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver-lt);margin-bottom:0.8rem;">3D Printed Tools</h3>
+        <p style="font-family:var(--serif);font-size:0.85tml;color:var(--chrome);line-height:1.65;">PLA and PETG tools — keep away from direct heat (hot cars, sunlight). Wipe clean after use. Replace if you notice cracking or deformation that could affect accuracy.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;" class="reveal reveal-delay-3">
+      <a href="contact.html" class="btn btn-primary btn-arrow">Have a Care Question? Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" class="footer-logo-img" alt="Plummo's Timber"/>
+        <div class="brand-tag">// Australian Timber Artisans</div>
+        <p>Handcrafted timber art, furniture, pens, homewares and bar accessories — shaped from Australia's finest native and exotic timbers. Slow craft. Built to last.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/plummostimber" target="_blank" class="social-link" title="Instagram">ig</a>
+          <a href="#" class="social-link" title="Facebook">fb</a>
+          <a href="#" class="social-link" title="YouTube">yt</a>
+          <a href="#" class="social-link" title="TikTok">tt</a>
+          <a href="#" class="social-link" title="Pinterest">pt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html#pens">Acrylic &amp; Wood Pens</a></li>
+          <li><a href="products.html#homewares">Homewares</a></li>
+          <li><a href="products.html#bar">Bar Accessories</a></li>
+          <li><a href="products.html#furniture">Furniture &amp; Tables</a></li>
+          <li><a href="products.html#resin">Wood &amp; Resin Art</a></li>
+          <li><a href="products.html#tools">3D Printed Tools</a></li>
+          <li><a href="products.html#custom">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="community.html">Community Hub</a></li>
+          <li><a href="community.html#discussions">Discussions</a></li>
+          <li><a href="community.html#articles">Articles</a></li>
+          <li><a href="community.html#videos">Videos &amp; Demos</a></li>
+          <li><a href="community.html#social">Instagram Feed</a></li>
+          <li><a href="podcast.html">Timber Bros Podcast</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="care-guide.html">Timber Care Guide</a></li>
+          <li><a href="shop.html">Online Shop</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="shipping.html">Shipping Policy</a></li>
+          <li><a href="returns.html">Returns &amp; Refunds</a></li>
+        </ul>
+        <br/>
+        <a href="https://instagram.com/plummostimber" target="_blank" class="footer-instagram">📷 @plummostimber</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Plummo's Timber. All rights reserved. Proudly handcrafted in Australia 🇦🇺</p>
+      <p class="made">Moved from Google Sites &rarr; <span>GitHub Pages</span></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

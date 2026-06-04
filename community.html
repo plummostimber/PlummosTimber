@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Hub — Plummo's Timber</title>
+  <meta name="description" content="Join the Plummo's Timber community. Discussions, articles, video demos, and our Instagram feed @plummostimber."/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <style>
+    /* COMMUNITY-SPECIFIC */
+    .comm-hero-stats {
+      display: flex; gap: 3rem;
+      padding: 2rem 3rem 3rem;
+      position: relative; z-index: 2;
+    }
+    .comm-stat { text-align: center; }
+    .comm-stat .n { font-family: var(--display); font-size: 2.8rem; color: var(--grit); line-height:1; }
+    .comm-stat .l { font-family: var(--mono); font-size: 0.55rem; letter-spacing:0.25em; color:var(--silver); text-transform:uppercase; }
+
+    /* SECTION NAV */
+    .comm-nav {
+      background: var(--charcoal);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky; top: 72px; z-index: 400;
+    }
+    .comm-nav-inner {
+      display: flex; align-items: center; gap: 0;
+      max-width: 1280px; margin: 0 auto; padding: 0 4rem;
+      overflow-x: auto;
+    }
+    .comm-nav-btn {
+      font-family: var(--heading);
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--silver);
+      background: none; border: none;
+      padding: 1rem 1.4rem;
+      cursor: pointer; white-space: nowrap;
+      position: relative; transition: color 0.2s;
+    }
+    .comm-nav-btn::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--amber); transform: scaleX(0); transition: transform 0.2s;
+    }
+    .comm-nav-btn.active, .comm-nav-btn:hover { color: var(--grit); }
+    .comm-nav-btn.active::after { transform: scaleX(1); }
+
+    /* DISCUSSION THREAD */
+    .thread {
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-left: 3px solid var(--amber);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.25s, background 0.25s;
+      cursor: pointer;
+    }
+    .thread:hover { background: rgba(255,255,255,0.025); border-left-color: var(--grit); }
+    .thread-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
+    .thread-title { font-family: var(--heading); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--offwhite); }
+    .thread-meta { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; color: var(--steel); text-align: right; }
+    .thread-excerpt { font-family: var(--serif); font-size: 0.85rem; color: var(--silver); line-height: 1.6; margin-bottom: 0.8rem; }
+    .thread-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .thread-tag { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); background: rgba(184,115,51,0.1); border: 1px solid rgba(184,115,51,0.2); padding: 0.2rem 0.5rem; }
+    .thread-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.8rem; margin-top: 0.8rem; }
+    .thread-author { display: flex; align-items: center; gap: 0.6rem; }
+    .thread-avatar { width: 28px; height: 28px; background: var(--walnut); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+    .thread-username { font-family: var(--mono); font-size: 0.58rem; color: var(--silver); }
+    .thread-stats { display: flex; gap: 1rem; }
+    .thread-stat { font-family: var(--mono); font-size: 0.55rem; color: var(--steel); display: flex; align-items: center; gap: 0.3rem; }
+
+    /* ARTICLE CARD */
+    .article-card { background: var(--charcoal); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
+    .article-card:hover { transform: translateY(-3px); border-color: rgba(192,168,130,0.2); }
+    .article-img { aspect-ratio: 16/9; background: var(--iron); display: flex; align-items: center; justify-content: center; font-size: 3rem; opacity: 0.2; position: relative; overflow: hidden; }
+    .article-img-bg { position: absolute; inset: 0; }
+    .article-body { padding: 1.5rem; }
+    .article-cat { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.5rem; }
+    .article-title { font-family: var(--heading); font-size: 1.05rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--offwhite); margin-bottom: 0.6rem; line-height: 1.3; }
+    .article-excerpt { font-family: var(--serif); font-size: 0.82rem; color: var(--silver); line-height: 1.6; margin-bottom: 1rem; }
+    .article-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.8rem; }
+    .article-date { font-family: var(--mono); font-size: 0.55rem; color: var(--steel); letter-spacing: 0.1em; }
+    .article-read { font-family: var(--heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grit); text-decoration: none; }
+
+    /* POST FORM */
+    .post-form-wrap {
+      background: var(--iron);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-top: 2px solid var(--amber);
+      padding: 2rem;
+    }
+    .post-form-wrap h3 { font-family: var(--display); font-size: 1.6rem; color: var(--offwhite); margin-bottom: 0.3rem; }
+    .post-form-wrap p { font-family: var(--serif); font-size: 0.85rem; color: var(--silver); margin-bottom: 1.5rem; }
+
+    /* INSTAGRAM SECTION */
+    .insta-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .insta-handle {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .insta-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      border-radius: 14px;
+    }
+    .insta-name { font-family: var(--display); font-size: 1.8rem; color: var(--offwhite); }
+    .insta-sub { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--silver); }
+
+    /* INSTA MOCK GRID */
+    .insta-post-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+    .insta-post {
+      aspect-ratio: 1;
+      position: relative; overflow: hidden;
+      cursor: pointer;
+    }
+    .insta-post-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .insta-post-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.4rem; }
+    .insta-post:hover .insta-post-overlay { opacity: 1; }
+    .insta-post-overlay span { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.15em; color: var(--offwhite); }
+    .ip1 { background: linear-gradient(135deg,#3a2010,#0d0905); }
+    .ip2 { background: linear-gradient(135deg,#1e2a12,#0a0d06); }
+    .ip3 { background: linear-gradient(135deg,#0e1820,#060b0f); }
+    .ip4 { background: linear-gradient(135deg,#201508,#0a0704); }
+    .ip5 { background: linear-gradient(135deg,#18101e,#0a060c); }
+    .ip6 { background: linear-gradient(135deg,#2a1a0a,#0f0906); }
+    .ip7 { background: linear-gradient(135deg,#0a1810,#060c08); }
+    .ip8 { background: linear-gradient(135deg,#1a1010,#0c0808); }
+    .ip9 { background: linear-gradient(135deg,#241408,#100904); }
+    .ip10 { background: linear-gradient(135deg,#0c1a14,#060e0a); }
+    .ip11 { background: linear-gradient(135deg,#1e1208,#0e0a04); }
+    .ip12 { background: linear-gradient(135deg,#0a1220,#060812); }
+
+    @media(max-width:768px) {
+      .comm-hero-stats { gap:1.5rem; padding:1rem 1.5rem 2rem; }
+      .comm-nav-inner { padding: 0 1rem; }
+      .insta-post-grid { grid-template-columns: repeat(3,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">PT</div>
+    <div class="nav-logo-text">Plummo's Timber<span>Australian Timber Artisans</span></div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="products.html">Products ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="products-pens.html">Acrylic &amp; Wood Pens</a></li>
+        <li><a href="products-homewares.html">Homewares</a></li>
+        <li><a href="products-bar.html">Bar Accessories</a></li>
+        <li><a href="products-furniture.html">Furniture &amp; Tables</a></li>
+        <li><a href="products-resin.html">Wood &amp; Resin Art</a></li>
+        <li><a href="products-3d.html">3D Printed Tools</a></li>
+        <li><a href="products-custom.html">Custom Orders</a></li>
+      </ul>
+    </li>
+    <li><a href="community.html" class="active">Community ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="community.html">Hub Overview</a></li>
+        <li><a href="community.html#discussions">Discussions</a></li>
+        <li><a href="community.html#articles">Articles</a></li>
+        <li><a href="community.html#videos">Videos &amp; Demos</a></li>
+        <li><a href="community.html#social">Social Feed</a></li>
+      </ul>
+    </li>
+    <li><a href="podcast.html">Podcast</a></li>
+    <li><a href="care-guide.html">Timber Care</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="shop.html" class="nav-shop">Shop Now</a>
+  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a><a href="about.html">About Us</a>
+  <a href="products.html">Products</a><a href="community.html">Community</a>
+  <a href="podcast.html">Timber Bros Podcast</a><a href="care-guide.html">Timber Care Guide</a>
+  <a href="shop.html">Online Shop</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-lines"></div>
+  <div class="page-hero-scratch"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-label">The Tribe</div>
+    <h1>Community <em>Hub</em></h1>
+  </div>
+</div>
+<div class="comm-hero-stats" style="background:var(--charcoal);border-bottom:1px solid rgba(255,255,255,0.05);padding:1.5rem 4rem;">
+  <div class="comm-stat"><span class="n">2.4k</span><br/><span class="l">Members</span></div>
+  <div class="comm-stat"><span class="n">180+</span><br/><span class="l">Discussions</span></div>
+  <div class="comm-stat"><span class="n">45</span><br/><span class="l">Articles</span></div>
+  <div class="comm-stat"><span class="n">62</span><br/><span class="l">Videos</span></div>
+  <div class="comm-stat"><span class="n">@plummostimber</span><br/><span class="l">Instagram</span></div>
+</div>
+
+<!-- STICKY SECTION NAV -->
+<div class="comm-nav">
+  <div class="comm-nav-inner">
+    <button class="comm-nav-btn active" onclick="scrollTo('discussions')">💬 Discussions</button>
+    <button class="comm-nav-btn" onclick="scrollTo('articles')">📖 Articles</button>
+    <button class="comm-nav-btn" onclick="scrollTo('videos')">🎥 Videos &amp; Demos</button>
+    <button class="comm-nav-btn" onclick="scrollTo('social')">📷 Instagram</button>
+    <button class="comm-nav-btn" onclick="scrollTo('post-new')">✏️ Post a Discussion</button>
+  </div>
+</div>
+
+<!-- DISCUSSIONS -->
+<section class="section" id="discussions">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div><p class="tag">Forum</p><h2 class="section-title reveal">Discussions <em>&amp; Talk</em></h2></div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;" class="filter-group">
+        <button class="comm-nav-btn active filter-btn" data-filter="all" data-target=".discussion-list" style="border:1px solid rgba(255,255,255,0.1);">All</button>
+        <button class="comm-nav-btn filter-btn" data-filter="techniques" data-target=".discussion-list" style="border:1px solid rgba(255,255,255,0.1);">Techniques</button>
+        <button class="comm-nav-btn filter-btn" data-filter="timber" data-target=".discussion-list" style="border:1px solid rgba(255,255,255,0.1);">Timber Types</button>
+        <button class="comm-nav-btn filter-btn" data-filter="tools" data-target=".discussion-list" style="border:1px solid rgba(255,255,255,0.1);">Tools</button>
+        <button class="comm-nav-btn filter-btn" data-filter="general" data-target=".discussion-list" style="border:1px solid rgba(255,255,255,0.1);">General</button>
+      </div>
+    </div>
+    <div class="discussion-list reveal reveal-delay-1">
+      <div class="thread" data-category="techniques">
+        <div class="thread-header"><div class="thread-title">Best finish for a Huon Pine pen — CA glue vs friction polish?</div><div class="thread-meta">2h ago · 14 replies</div></div>
+        <div class="thread-excerpt">Just finished turning a stunning piece of Huon Pine and I'm torn on the finish. The CA gives a glassy look but I worry about the smell. Anyone tried wax over friction polish for pens?</div>
+        <div class="thread-tags"><span class="thread-tag">finishing</span><span class="thread-tag">pens</span><span class="thread-tag">huon pine</span></div>
+        <div class="thread-footer"><div class="thread-author"><div class="thread-avatar">🪵</div><span class="thread-username">@timberturner_au</span></div><div class="thread-stats"><span class="thread-stat">👁 84</span><span class="thread-stat">💬 14</span><span class="thread-stat">❤️ 7</span></div></div>
+      </div>
+      <div class="thread" data-category="timber">
+        <div class="thread-header"><div class="thread-title">Red Mallee Burl — where to source sustainably in South Australia?</div><div class="thread-meta">Yesterday · 8 replies</div></div>
+        <div class="thread-excerpt">Looking for a reliable supplier of Red Mallee Burl in SA. The stuff I've been getting from eBay is inconsistent — sometimes great, sometimes riddled with cracks after it dries out.</div>
+        <div class="thread-tags"><span class="thread-tag">sourcing</span><span class="thread-tag">burl</span><span class="thread-tag">south australia</span></div>
+        <div class="thread-footer"><div class="thread-author"><div class="thread-avatar">🌿</div><span class="thread-username">@craftwood_sa</span></div><div class="thread-stats"><span class="thread-stat">👁 128</span><span class="thread-stat">💬 8</span><span class="thread-stat">❤️ 12</span></div></div>
+      </div>
+      <div class="thread" data-category="techniques">
+        <div class="thread-header"><div class="thread-title">River table resin bubbles — tips for removing without torching too long?</div><div class="thread-meta">2 days ago · 22 replies</div></div>
+        <div class="thread-excerpt">Third river table poured and still getting micro-bubbles in the deep sections. I've tried degassing and slow pour but still getting them. My torch technique must be off.</div>
+        <div class="thread-tags"><span class="thread-tag">resin</span><span class="thread-tag">river table</span><span class="thread-tag">techniques</span></div>
+        <div class="thread-footer"><div class="thread-author"><div class="thread-avatar">💧</div><span class="thread-username">@resin_bench_qld</span></div><div class="thread-stats"><span class="thread-stat">👁 245</span><span class="thread-stat">💬 22</span><span class="thread-stat">❤️ 31</span></div></div>
+      </div>
+      <div class="thread" data-category="tools">
+        <div class="thread-header"><div class="thread-title">Plummo's 3D printed pen mandrel review — worth it for a hobbyist?</div><div class="thread-meta">3 days ago · 11 replies</div></div>
+        <div class="thread-excerpt">Just got one of the 3D printed mandrel savers from the shop. Slick bit of kit honestly. Runs true on my Jet mini. Anyone else got one?</div>
+        <div class="thread-tags"><span class="thread-tag">3d printed</span><span class="thread-tag">tools</span><span class="thread-tag">review</span></div>
+        <div class="thread-footer"><div class="thread-author"><div class="thread-avatar">⚙️</div><span class="thread-username">@lathe_life_nsw</span></div><div class="thread-stats"><span class="thread-stat">👁 196</span><span class="thread-stat">💬 11</span><span class="thread-stat">❤️ 18</span></div></div>
+      </div>
+      <div class="thread" data-category="general">
+        <div class="thread-header"><div class="thread-title">Show us your latest piece! — June 2025 Share Thread 🇦🇺</div><div class="thread-meta">1 week ago · 67 replies</div></div>
+        <div class="thread-excerpt">Monthly show-and-tell thread! Post your June work here. Pens, bowls, furniture, resin art — all welcome. Doesn't have to be perfect, just yours.</div>
+        <div class="thread-tags"><span class="thread-tag">show and tell</span><span class="thread-tag">community</span><span class="thread-tag">monthly</span></div>
+        <div class="thread-footer"><div class="thread-author"><div class="thread-avatar">🎉</div><span class="thread-username">@plummostimber</span></div><div class="thread-stats"><span class="thread-stat">👁 892</span><span class="thread-stat">💬 67</span><span class="thread-stat">❤️ 104</span></div></div>
+      </div>
+      <div class="thread" data-category="timber">
+        <div class="thread-header"><div class="thread-title">Banksia nuts for turning — prep tips and what sizes work best</div><div class="thread-meta">1 week ago · 19 replies</div></div>
+        <div class="thread-excerpt">Found a pile of Banksia nuts at a local market. Never turned them before but the texture looks insane. Anyone got advice on drying time and what lathe speed works?</div>
+        <div class="thread-tags"><span class="thread-tag">banksia</span><span class="thread-tag">turning</span><span class="thread-tag">native</span></div>
+        <div class="thread-footer"><div class="thread-author"><div class="thread-avatar">🌸</div><span class="thread-username">@wa_woodworks</span></div><div class="thread-stats"><span class="thread-stat">👁 311</span><span class="thread-stat">💬 19</span><span class="thread-stat">❤️ 26</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section" id="articles" style="background:var(--charcoal);">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div><p class="tag">Knowledge</p><h2 class="section-title reveal">Articles <em>&amp; Guides</em></h2></div>
+      <a href="#" class="btn btn-outline btn-sm reveal">All Articles →</a>
+    </div>
+    <div class="grid-3 reveal reveal-delay-1">
+      <div class="article-card">
+        <div class="article-img" style="background:linear-gradient(145deg,#3a2010,#0d0905);">🪵</div>
+        <div class="article-body">
+          <div class="article-cat">Species Guide</div>
+          <div class="article-title">Huon Pine: Australia's Living Fossil Timber</div>
+          <div class="article-excerpt">One of the world's rarest timbers, Huon Pine grows only in Tasmania and can live 3,000 years. Here's why it's worth every dollar.</div>
+          <div class="article-footer"><span class="article-date">12 May 2025</span><a href="#" class="article-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-img" style="background:linear-gradient(145deg,#0e1820,#060b0f);">🌊</div>
+        <div class="article-body">
+          <div class="article-cat">Technique Deep Dive</div>
+          <div class="article-title">The Complete Guide to River Table Resin Pours</div>
+          <div class="article-excerpt">From mold prep to final sand — everything you need to know before pouring your first river table, learned the hard way so you don't have to.</div>
+          <div class="article-footer"><span class="article-date">28 Apr 2025</span><a href="#" class="article-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-img" style="background:linear-gradient(145deg,#1e2a12,#0a0d06);">🌿</div>
+        <div class="article-body">
+          <div class="article-cat">Sustainability</div>
+          <div class="article-title">Sourcing Native Australian Timber Responsibly in 2025</div>
+          <div class="article-excerpt">The landscape for native timber sourcing has shifted significantly. Here's how to find legally harvested, sustainable Australian species.</div>
+          <div class="article-footer"><span class="article-date">10 Apr 2025</span><a href="#" class="article-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-img" style="background:linear-gradient(145deg,#201508,#0a0704);">🖊️</div>
+        <div class="article-body">
+          <div class="article-cat">Pen Turning</div>
+          <div class="article-title">CA Glue Finish Masterclass: Glassy Pens Every Time</div>
+          <div class="article-excerpt">Six coats, micro-mesh sanding and the right accelerator. Here's the exact process for achieving a mirror-finish on any pen blank.</div>
+          <div class="article-footer"><span class="article-date">2 Mar 2025</span><a href="#" class="article-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-img" style="background:linear-gradient(145deg,#1a1008,#080504);">🍸</div>
+        <div class="article-body">
+          <div class="article-cat">Design Guide</div>
+          <div class="article-title">Designing a Timber Bar Setup Australians Actually Want</div>
+          <div class="article-excerpt">From timber muddlers to personalised whisky boards — how to design a timber bar collection that sells at markets and online.</div>
+          <div class="article-footer"><span class="article-date">18 Feb 2025</span><a href="#" class="article-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-img" style="background:linear-gradient(145deg,#18101e,#0a060c);">⚙️</div>
+        <div class="article-body">
+          <div class="article-cat">Workshop Setup</div>
+          <div class="article-title">3D Printing Tools for Woodturners: What's Actually Worth It</div>
+          <div class="article-excerpt">An honest look at which 3D printed accessories genuinely improve your turning workflow and which ones are just novelties.</div>
+          <div class="article-footer"><span class="article-date">5 Feb 2025</span><a href="#" class="article-read">Read →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS & DEMOS -->
+<section class="section" id="videos">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div><p class="tag">Watch &amp; Learn</p><h2 class="section-title reveal">Videos <em>&amp; Demos</em></h2></div>
+      <a href="https://youtube.com" target="_blank" class="btn btn-outline btn-sm reveal">YouTube Channel →</a>
+    </div>
+    <!-- FEATURED VIDEO -->
+    <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.05);border-top:2px solid var(--amber);margin-bottom:2rem;display:grid;grid-template-columns:1.5fr 1fr;overflow:hidden;" class="reveal">
+      <div class="video-thumb" style="min-height:300px;">
+        <div class="video-play">▶</div>
+        <div style="position:absolute;inset:0;background:linear-gradient(145deg,#201408,#050302);display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:0.1;z-index:0;">🪵</div>
+        <div style="position:absolute;top:0.8rem;left:0.8rem;background:var(--rust);font-family:var(--mono);font-size:0.55rem;letter-spacing:0.2em;color:#fff;padding:0.25rem 0.6rem;text-transform:uppercase;">Featured</div>
+        <div class="video-duration">18:42</div>
+      </div>
+      <div style="padding:2.5rem;display:flex;flex-direction:column;justify-content:center;">
+        <div class="article-cat">Workshop Demo</div>
+        <h3 style="font-family:var(--display);font-size:2rem;color:var(--offwhite);line-height:0.95;margin-bottom:1rem;">Turning a Huon Pine Pen from Blank to Finish</h3>
+        <p style="font-family:var(--serif);font-size:0.9rem;color:var(--silver);line-height:1.7;margin-bottom:1.5rem;">Full process from mounting the blank on the mandrel through to the final CA finish and polish. All tools and speeds covered.</p>
+        <a href="#" class="btn btn-rust btn-sm">Watch Now →</a>
+      </div>
+    </div>
+    <div class="grid-4 reveal reveal-delay-1">
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#0e1820,#060b0f);">
+          <div class="video-play">▶</div><div class="video-duration">12:08</div>
+        </div>
+        <div class="video-info"><h3>Resin River Table Pour</h3><p style="font-family:var(--serif);">Setting up moulds, pigment ratios and the slow pour technique</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#1e2a12,#0a0d06);">
+          <div class="video-play">▶</div><div class="video-duration">08:55</div>
+        </div>
+        <div class="video-info"><h3>Banksia Nut Bowl</h3><p style="font-family:var(--serif);">Turning a hollow form from a Banksia nut — tips and traps</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#3a2010,#0d0905);">
+          <div class="video-play">▶</div><div class="video-duration">22:14</div>
+        </div>
+        <div class="video-info"><h3>Shop Setup Tour 2025</h3><p style="font-family:var(--serif);">Full tour of the Plummo's workshop — lathe, tools and layout</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#18101e,#0a060c);">
+          <div class="video-play">▶</div><div class="video-duration">06:30</div>
+        </div>
+        <div class="video-info"><h3>3D Printed Mandrel Saver</h3><p style="font-family:var(--serif);">How to use Plummo's mandrel saver for accurate pen turning</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#1a1008,#080504);">
+          <div class="video-play">▶</div><div class="video-duration">15:02</div>
+        </div>
+        <div class="video-info"><h3>Chopping Board Finish</h3><p style="font-family:var(--serif);">Food-safe oils and board butter — how and when to apply</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#201508,#0a0704);">
+          <div class="video-play">▶</div><div class="video-duration">10:17</div>
+        </div>
+        <div class="video-info"><h3>Acrylic Pen Blanks</h3><p style="font-family:var(--serif);">Cutting, drilling and turning acrylic without chipping</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#0a1810,#060c08);">
+          <div class="video-play">▶</div><div class="video-duration">19:45</div>
+        </div>
+        <div class="video-info"><h3>Live Edge Slab Prep</h3><p style="font-family:var(--serif);">Flattening, cleaning and stabilising a raw live edge slab</p></div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(145deg,#2a1a0a,#0f0906);">
+          <div class="video-play">▶</div><div class="video-duration">07:22</div>
+        </div>
+        <div class="video-info"><h3>Bar Accessories Range</h3><p style="font-family:var(--serif);">Turning muddlers, bottle stoppers and bar tools in one session</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM SECTION -->
+<section class="section" id="social" style="background:var(--charcoal);">
+  <div class="container">
+    <div class="insta-header reveal">
+      <div class="insta-handle">
+        <div class="insta-icon">📷</div>
+        <div>
+          <div class="insta-name">@plummostimber</div>
+          <div class="insta-sub">Instagram · Follow for daily workshop content</div>
+        </div>
+      </div>
+      <a href="https://instagram.com/plummostimber" target="_blank" class="btn btn-solid btn-sm">Follow on Instagram →</a>
+    </div>
+    <div class="insta-post-grid reveal reveal-delay-1">
+      <div class="insta-post ip1"><div class="insta-post-bg">🖊️</div><div class="insta-post-overlay"><span>🖊️ New Pen</span><span>❤️ 284</span></div></div>
+      <div class="insta-post ip2"><div class="insta-post-bg">🌿</div><div class="insta-post-overlay"><span>🌿 Timber</span><span>❤️ 196</span></div></div>
+      <div class="insta-post ip3"><div class="insta-post-bg">🌊</div><div class="insta-post-overlay"><span>🌊 Resin</span><span>❤️ 445</span></div></div>
+      <div class="insta-post ip4"><div class="insta-post-bg">🪑</div><div class="insta-post-overlay"><span>🪑 Furniture</span><span>❤️ 367</span></div></div>
+      <div class="insta-post ip5"><div class="insta-post-bg">🍸</div><div class="insta-post-overlay"><span>🍸 Bar</span><span>❤️ 218</span></div></div>
+      <div class="insta-post ip6"><div class="insta-post-bg">⚙️</div><div class="insta-post-overlay"><span>⚙️ Tools</span><span>❤️ 153</span></div></div>
+      <div class="insta-post ip7"><div class="insta-post-bg">🪵</div><div class="insta-post-overlay"><span>🪵 Workshop</span><span>❤️ 312</span></div></div>
+      <div class="insta-post ip8"><div class="insta-post-bg">🎙️</div><div class="insta-post-overlay"><span>🎙️ Podcast</span><span>❤️ 189</span></div></div>
+      <div class="insta-post ip9"><div class="insta-post-bg">🏠</div><div class="insta-post-overlay"><span>🏠 Homewares</span><span>❤️ 276</span></div></div>
+      <div class="insta-post ip10"><div class="insta-post-bg">✏️</div><div class="insta-post-overlay"><span>✏️ Custom</span><span>❤️ 398</span></div></div>
+      <div class="insta-post ip11"><div class="insta-post-bg">🌸</div><div class="insta-post-overlay"><span>🌸 Banksia</span><span>❤️ 334</span></div></div>
+      <div class="insta-post ip12"><div class="insta-post-bg">🌟</div><div class="insta-post-overlay"><span>🌟 Featured</span><span>❤️ 521</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;" class="reveal reveal-delay-2">
+      <a href="https://instagram.com/plummostimber" target="_blank" class="btn btn-outline">See All Posts on @plummostimber →</a>
+    </div>
+  </div>
+</section>
+
+<!-- POST NEW DISCUSSION -->
+<section class="section" id="post-new" style="background:var(--black);">
+  <div class="container-narrow">
+    <p class="tag" style="justify-content:center;">Join the Conversation</p>
+    <h2 class="section-title text-center reveal" style="margin-bottom:2rem;">Start a <em>Discussion</em></h2>
+    <div class="post-form-wrap reveal reveal-delay-1">
+      <h3>New Discussion</h3>
+      <p>Share a question, tip, build log or general chat with the Plummo's community.</p>
+      <form id="discussion-form">
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" placeholder="Timber Mate" required/></div>
+          <div class="form-group"><label>Your Location</label><input type="text" placeholder="Sydney, NSW"/></div>
+        </div>
+        <div class="form-group"><label>Discussion Title</label><input type="text" placeholder="What are you wanting to talk about?" required/></div>
+        <div class="form-group">
+          <label>Category</label>
+          <select>
+            <option value="">Select a category…</option>
+            <option>Techniques</option>
+            <option>Timber Types</option>
+            <option>Tools &amp; Workshop</option>
+            <option>Show &amp; Tell</option>
+            <option>Buying &amp; Selling</option>
+            <option>General Chat</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Your Post</label><textarea placeholder="Share your thoughts, question or tips with the community…" style="min-height:160px;" required></textarea></div>
+        <div class="form-group"><label>Tags (comma separated)</label><input type="text" placeholder="e.g. pens, huon pine, finishing"/></div>
+        <button type="submit" class="btn btn-solid" style="margin-top:0.5rem;">Post Discussion →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">Plummo's Timber</div>
+        <div class="brand-tag">// Australian Timber Artisans</div>
+        <p>Handcrafted timber art, furniture, pens, homewares and bar accessories from Australia's finest native timbers. Slow craft. Built to last.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/plummostimber" target="_blank" class="social-link">ig</a>
+          <a href="#" class="social-link">fb</a>
+          <a href="#" class="social-link">yt</a>
+          <a href="#" class="social-link">tt</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Products</h4><ul>
+        <li><a href="products-pens.html">Acrylic &amp; Wood Pens</a></li>
+        <li><a href="products-homewares.html">Homewares</a></li>
+        <li><a href="products-bar.html">Bar Accessories</a></li>
+        <li><a href="products-furniture.html">Furniture &amp; Tables</a></li>
+        <li><a href="products-resin.html">Wood &amp; Resin Art</a></li>
+        <li><a href="products-3d.html">3D Printed Tools</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Community</h4><ul>
+        <li><a href="community.html">Community Hub</a></li>
+        <li><a href="community.html#discussions">Discussions</a></li>
+        <li><a href="community.html#articles">Articles</a></li>
+        <li><a href="community.html#videos">Videos &amp; Demos</a></li>
+        <li><a href="podcast.html">Timber Bros Podcast</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="care-guide.html">Timber Care Guide</a></li>
+        <li><a href="shop.html">Online Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+      </ul><br/><a href="https://instagram.com/plummostimber" target="_blank" class="footer-instagram">📷 @plummostimber</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Plummo's Timber. All rights reserved. Proudly handcrafted in Australia 🇦🇺</p>
+      <p class="made">Google Sites → <span>GitHub Pages</span></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+  // Community section nav scroll highlight
+  document.querySelectorAll('.comm-nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.comm-nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+  function scrollTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>
