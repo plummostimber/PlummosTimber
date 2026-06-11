@@ -608,8 +608,8 @@ p, li { font-family: var(--serif); font-weight: 300; line-height: 1.75; }
 
 /* Small logo icon */
 .nav-logo-icon {
-  height: 52px;       /* SMALL header icon */
-  width: 52px;
+  height: 80px;       /* SMALL header icon */
+  width: 80px;
   object-fit: contain;
   flex-shrink: 0;
 }
