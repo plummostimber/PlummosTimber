@@ -597,3 +597,43 @@ p, li { font-family: var(--serif); font-weight: 300; line-height: 1.75; }
   .grid-4 { grid-template-columns: 1fr; }
   .nav-logo-img { height: 40px; }
 }
+/* === HEADER LOGO & TEXT === */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #111;       /* Keeps it dark and readable */
+}
+
+/* Small logo icon */
+.nav-logo-icon {
+  height: 28px;       /* SMALL header icon */
+  width: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Brand text */
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+/* Main site title */
+.nav-logo-main {
+  font-size: 1rem;      /* compact for nav */
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* Tagline — small & subtle */
+.nav-logo-tagline {
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 2px;
+}
