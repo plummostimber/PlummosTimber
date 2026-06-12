@@ -93,6 +93,12 @@ p, li { font-family: var(--serif); font-weight: 300; line-height: 1.75; }
 .nav-logo {
   display: flex; align-items: center; gap: 0;
   text-decoration: none; flex-shrink: 0;
+  
+.nav-logo-text span {
+  display: block;      /* puts tagline on its own line */
+  margin-top: 4px;     /* adjust spacing here */
+}
+
 }
 .nav-logo-img {
   height: 52px;
