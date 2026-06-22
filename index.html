@@ -116,22 +116,27 @@
     }
     .hero-logo {
       position: absolute;
-      right: 13rem;
+      left: 50%;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translate(-50%, -50%);
       z-index: 2;
       animation: fadeUp 0.8s ease 0.7s both;
       pointer-events: none;
     }
     .hero-logo img {
-      height: 220px;
+      height: 560px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 0 30px rgba(140,140,140,0.18));
+      filter: drop-shadow(0 0 40px rgba(140,140,140,0.2));
+    }
+    @media (max-width: 1700px) {
+      .hero-logo img { height: 460px; }
+    }
+    @media (max-width: 1500px) {
+      .hero-logo img { height: 380px; }
     }
     @media (max-width: 1300px) {
-      .hero-logo { right: 11rem; }
-      .hero-logo img { height: 170px; }
+      .hero-logo img { height: 300px; }
     }
     @media (max-width: 1100px) {
       .hero-logo { display: none; }
