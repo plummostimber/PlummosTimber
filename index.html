@@ -241,30 +241,32 @@
       z-index: 1;
     }
     .about-badge {
-      position: absolute;
-      bottom: -20px; right: -20px;
-      background: var(--walnut);
-      border: 2px solid var(--bark);
-      padding: 1.5rem;
-      width: 130px; height: 130px;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; text-align: center;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    }
-    .about-badge .b-num {
-      font-family: var(--display);
-      font-size: 2.2rem;
-      color: var(--offwhite);
-      line-height: 1;
-    }
-    .about-badge .b-label {
-      font-family: var(--mono);
-      font-size: 0.45rem;
-      letter-spacing: 0.2em;
-      color: rgba(232,228,223,0.7);
-      text-transform: uppercase;
-      margin-top: 0.2rem;
-    }
+  position: absolute;
+  bottom: -20px; right: -20px;
+  background: var(--walnut);
+  border: 2px solid var(--bark);
+  padding: 1.5rem;
+  width: 130px; height: 130px;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; text-align: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: 3;
+}
+.about-badge .b-num {
+  font-family: var(--display);
+  font-size: 2.2rem;
+  color: var(--offwhite);
+  line-height: 1;
+  margin-top: 0.6rem;
+}
+.about-badge .b-label {
+  font-family: var(--mono);
+  font-size: 0.45rem;
+  letter-spacing: 0.2em;
+  color: rgba(232,228,223,0.7);
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
     .about-text-content { }
     .about-body {
       font-family: var(--serif);
@@ -721,7 +723,7 @@
     </div>
   </div>
   <div class="about-text-content">
-    <p class="tag">About Plummo's</p>
+    <p class="tag">About Plummo's Timber</p>
     <h2 class="section-title reveal">Where Nature<br/><em>Meets Craft</em></h2>
     <p class="about-body reveal reveal-delay-1">At Plummo's Timber, we believe the finest creations aren't manufactured — they're unearthed through patience and deep respect for the natural world. As a family-run workshop, we exist at the intersection of bespoke furniture and sculptural wood art.</p>
     <p class="about-body reveal reveal-delay-2" style="margin-top:-1rem">We hand-select every piece of timber for its unique grain, structural integrity, and the natural history it holds. No project is too small — we just enjoy the creative process.</p>
