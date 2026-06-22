@@ -114,6 +114,28 @@
       display: flex; flex-direction: column; gap: 2rem; z-index: 2;
       animation: fadeUp 0.8s ease 0.8s both;
     }
+    .hero-logo {
+      position: absolute;
+      right: 13rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      animation: fadeUp 0.8s ease 0.7s both;
+      pointer-events: none;
+    }
+    .hero-logo img {
+      height: 220px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 30px rgba(140,140,140,0.18));
+    }
+    @media (max-width: 1300px) {
+      .hero-logo { right: 11rem; }
+      .hero-logo img { height: 170px; }
+    }
+    @media (max-width: 1100px) {
+      .hero-logo { display: none; }
+    }
     .stat-item { text-align: right; }
     .stat-num {
       font-family: var(--display);
@@ -565,7 +587,7 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="images/logo.png" class="nav-logo-img" alt="Plummo's Timber"/>
+    <div class="nav-logo-mark">PT</div>
     <div class="nav-logo-text">Plummo's Timber<span>Australian Timber Artisans</span></div>
   </a>
   <ul class="nav-menu">
@@ -635,6 +657,9 @@
       <a href="about.html" class="btn btn-outline">Our Story</a>
     </div>
   </div>
+  <div class="hero-logo">
+    <img src="images/logo.png" alt="Plummo's Timber"/>
+  </div>
   <div class="hero-stats">
     <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Handmade</span><div class="stat-divider"></div></div>
     <div class="stat-item"><span class="stat-num">AU</span><span class="stat-label">Made in Aus</span><div class="stat-divider"></div></div>
@@ -702,7 +727,7 @@
       <a href="products.html" class="btn btn-outline reveal">All Products →</a>
     </div>
     <div class="products-masonry reveal reveal-delay-1">
-      <div class="pcard pc1 tall"><div class="pcard-bg"></div> <div class="pcard-emoji"> </div><div class="pcard-info"><span class="pcard-cat">Collection 01</span><div class="pcard-name">Acrylic &amp;<br/>Wood Pens</div><a href="products-pens.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc1 tall"><div class="pcard-bg"><div class="pcard-emoji">🖊️</div></div><div class="pcard-info"><span class="pcard-cat">Collection 01</span><div class="pcard-name">Acrylic &amp;<br/>Wood Pens</div><a href="products-pens.html" class="pcard-link">Explore</a></div></div>
       <div class="pcard pc2"><div class="pcard-bg"><div class="pcard-emoji">🏠</div></div><div class="pcard-info"><span class="pcard-cat">Collection 02</span><div class="pcard-name">Homewares</div><a href="products-homewares.html" class="pcard-link">Explore</a></div></div>
       <div class="pcard pc3"><div class="pcard-bg"><div class="pcard-emoji">🍸</div></div><div class="pcard-info"><span class="pcard-cat">Collection 03</span><div class="pcard-name">Bar Accessories</div><a href="products-bar.html" class="pcard-link">Explore</a></div></div>
       <div class="pcard pc4"><div class="pcard-bg"><div class="pcard-emoji">🌊</div></div><div class="pcard-info"><span class="pcard-cat">Collection 04</span><div class="pcard-name">Resin Art</div><a href="products-resin.html" class="pcard-link">Explore</a></div></div>
