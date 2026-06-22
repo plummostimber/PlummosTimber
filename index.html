@@ -227,8 +227,19 @@
         88deg, transparent 0, transparent 14px,
         rgba(155,107,58,0.07) 14px, rgba(155,107,58,0.07) 15px
       );
+      pointer-events: none;
+      z-index: 2;
     }
-    .about-main-emoji { font-size: 5rem; opacity: 0.15; position: relative; z-index: 1; }
+    /* Any image dropped in here will always fill the fixed 4:5 box,
+       cropped (never stretched/distorted), regardless of its native size */
+    .about-main-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      z-index: 1;
+    }
     .about-badge {
       position: absolute;
       bottom: -20px; right: -20px;
@@ -311,7 +322,8 @@
       position: relative;
     }
     .pcard:hover .pcard-bg { transform: scale(1.04); }
-    .pcard-emoji { font-size: 4rem; opacity: 0.15; }
+    .pcard-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; }
+    .pcard-emoji { font-size: 4rem; opacity: 0.15; position: relative; z-index: 2; }
     .pcard-info {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 2rem;
@@ -372,6 +384,8 @@
       opacity: 0.15;
       position: relative; overflow: hidden;
     }
+    .resin-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; opacity: 1; }
+    .resin-frame > *:not(img) { position: relative; z-index: 2; }
     .resin-frame::before {
       content: '';
       position: absolute;
@@ -592,7 +606,7 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="images/logo.png" class="nav-logo-img" alt="Plummo's Timber"/>
+    <div class="nav-logo-mark">PT</div>
     <div class="nav-logo-text">Plummo's Timber<span>Australian Timber Artisans</span></div>
   </a>
   <ul class="nav-menu">
@@ -702,7 +716,7 @@
 <section class="home-about">
   <div class="about-visual-wrap reveal-left">
     <div class="about-frame-outer">
-      <div class="about-main-img"><div class="about-main-emoji">🪵</div></div>
+      <div class="about-main-img"><img src="images/about-timber.jpg" alt="Plummo's Timber workshop"/></div>
       <div class="about-badge"><span class="b-num">100%</span><span class="b-label">Hand<br/>crafted</span></div>
     </div>
   </div>
@@ -732,12 +746,12 @@
       <a href="products.html" class="btn btn-outline reveal">All Products →</a>
     </div>
     <div class="products-masonry reveal reveal-delay-1">
-      <div class="pcard pc1 tall"><div class="pcard-bg"><div class="pcard-emoji">🖊️</div></div><div class="pcard-info"><span class="pcard-cat">Collection 01</span><div class="pcard-name">Acrylic &amp;<br/>Wood Pens</div><a href="products-pens.html" class="pcard-link">Explore</a></div></div>
-      <div class="pcard pc2"><div class="pcard-bg"><div class="pcard-emoji">🏠</div></div><div class="pcard-info"><span class="pcard-cat">Collection 02</span><div class="pcard-name">Homewares</div><a href="products-homewares.html" class="pcard-link">Explore</a></div></div>
-      <div class="pcard pc3"><div class="pcard-bg"><div class="pcard-emoji">🍸</div></div><div class="pcard-info"><span class="pcard-cat">Collection 03</span><div class="pcard-name">Bar Accessories</div><a href="products-bar.html" class="pcard-link">Explore</a></div></div>
-      <div class="pcard pc4"><div class="pcard-bg"><div class="pcard-emoji">🌊</div></div><div class="pcard-info"><span class="pcard-cat">Collection 04</span><div class="pcard-name">Resin Art</div><a href="products-resin.html" class="pcard-link">Explore</a></div></div>
-      <div class="pcard pc5"><div class="pcard-bg"><div class="pcard-emoji">🪑</div></div><div class="pcard-info"><span class="pcard-cat">Collection 05</span><div class="pcard-name">Furniture</div><a href="products-furniture.html" class="pcard-link">Explore</a></div></div>
-      <div class="pcard pc6"><div class="pcard-bg"><div class="pcard-emoji">⚙️</div></div><div class="pcard-info"><span class="pcard-cat">Collection 06</span><div class="pcard-name">3D Printed Tools</div><a href="products-3d.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc1 tall"><div class="pcard-bg"><img src="images/collection-acrylic-and-wood-pens.jpg" alt="Acrylic & Wood Pens"/><div class="pcard-emoji">🖊️</div></div><div class="pcard-info"><span class="pcard-cat">Collection 01</span><div class="pcard-name">Acrylic &amp;<br/>Wood Pens</div><a href="products-pens.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc2"><div class="pcard-bg"><img src="images/collection-homewares.jpg" alt="Homewares"/><div class="pcard-emoji">🏠</div></div><div class="pcard-info"><span class="pcard-cat">Collection 02</span><div class="pcard-name">Homewares</div><a href="products-homewares.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc3"><div class="pcard-bg"><img src="images/collection-bar-accessories.jpg" alt="Bar Accessories"/><div class="pcard-emoji">🍸</div></div><div class="pcard-info"><span class="pcard-cat">Collection 03</span><div class="pcard-name">Bar Accessories</div><a href="products-bar.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc4"><div class="pcard-bg"><img src="images/collection-resin-art.jpg" alt="Resin Art"/><div class="pcard-emoji">🌊</div></div><div class="pcard-info"><span class="pcard-cat">Collection 04</span><div class="pcard-name">Resin Art</div><a href="products-resin.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc5"><div class="pcard-bg"><img src="images/collection-furniture.jpg" alt="Furniture"/><div class="pcard-emoji">🪑</div></div><div class="pcard-info"><span class="pcard-cat">Collection 05</span><div class="pcard-name">Furniture</div><a href="products-furniture.html" class="pcard-link">Explore</a></div></div>
+      <div class="pcard pc6"><div class="pcard-bg"><img src="images/collection-3d-printed-tools.jpg" alt="3D Printed Tools"/><div class="pcard-emoji">⚙️</div></div><div class="pcard-info"><span class="pcard-cat">Collection 06</span><div class="pcard-name">3D Printed Tools</div><a href="products-3d.html" class="pcard-link">Explore</a></div></div>
     </div>
   </div>
 </section>
@@ -745,7 +759,7 @@
 <!-- RESIN ART FEATURE -->
 <section class="resin-section">
   <div class="resin-visual reveal-left">
-    <div class="resin-frame">🌊</div>
+    <div class="resin-frame"><img src="images/resin-art-feature.jpg" alt="Wood and resin art feature piece"/><span style="position:relative;z-index:2;">🌊</span></div>
     <div class="resin-tag-float"><span>Signature</span><strong>Resin Art</strong></div>
   </div>
   <div class="reveal reveal-delay-1">

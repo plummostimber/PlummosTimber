@@ -8,6 +8,68 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ═══════════════════════════════════════════════
+   UNIVERSAL IMAGE PLACEHOLDER SYSTEM
+   ───────────────────────────────────────────────
+   Every product/media image box on the site follows
+   this exact pattern:
+
+   <div class="img-box [ratio-class]">
+     <img src="images/your-photo.jpg" alt="..."/>
+     <span class="img-box-emoji">🪵</span>  <!-- delete this line once a real photo is added -->
+   </div>
+
+   HOW IT WORKS:
+   - The box (.img-box) defines a FIXED aspect-ratio. This never changes.
+   - The <img> inside always uses object-fit: cover, so ANY photo you
+     drop in — portrait, landscape, square, huge, tiny — fills the box
+     edge-to-edge without distortion or stretching. No sizing maths,
+     no CSS edits, ever required when swapping photos.
+   - The emoji placeholder sits on top via z-index until a real <img>
+     src is provided. If the <img> 404s (no file yet), browsers render
+     it as 0×0, so the emoji remains visible as the placeholder.
+   - Once a real photo exists at the given path, simply delete the
+     <span class="img-box-emoji"> line — nothing else needs to change.
+═══════════════════════════════════════════════ */
+.img-box {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--steel-dk);
+}
+.img-box img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.img-box-emoji {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  opacity: 0.18;
+  line-height: 1;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.img-box:hover .img-box-emoji { opacity: 0.32; transform: scale(1.06); }
+.img-box-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(160deg, transparent 45%, rgba(5,5,5,0.7) 100%);
+  pointer-events: none;
+}
+/* Standard ratios used across the site */
+.img-box.r-4-3  { aspect-ratio: 4/3; }
+.img-box.r-1-1  { aspect-ratio: 1/1; }
+.img-box.r-16-9 { aspect-ratio: 16/9; }
+.img-box.r-4-5  { aspect-ratio: 4/5; }
+.img-box.r-3-4  { aspect-ratio: 3/4; }
+
 :root {
   /* ── SILVER/BLACK CORE ── */
   --black:     #050505;
@@ -520,6 +582,8 @@ p, li { font-family: var(--serif); font-weight: 300; line-height: 1.75; }
 .video-card { background: var(--iron); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
 .video-card:hover { transform: translateY(-3px); border-color: rgba(200,200,200,0.15); }
 .video-thumb { aspect-ratio: 16/9; background: var(--steel-dk); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.video-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; }
+.video-thumb > *:not(img) { position: relative; z-index: 2; }
 .video-play { width: 48px; height: 48px; background: rgba(200,200,200,0.15); border: 1px solid rgba(200,200,200,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: all 0.2s; z-index: 2; }
 .video-card:hover .video-play { background: rgba(200,200,200,0.9); color: var(--black); transform: scale(1.1); }
 .video-duration { position: absolute; bottom: 0.5rem; right: 0.5rem; font-family: var(--mono); font-size: 0.58rem; background: rgba(0,0,0,0.75); color: var(--white-raw); padding: 0.18rem 0.4rem; letter-spacing: 0.08em; }
@@ -530,6 +594,8 @@ p, li { font-family: var(--serif); font-weight: 300; line-height: 1.75; }
 /* ══ INSTAGRAM GRID ══ */
 .insta-post { aspect-ratio: 1; position: relative; overflow: hidden; cursor: pointer; }
 .insta-post-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+.insta-post-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; }
+.insta-post-bg > *:not(img) { position: relative; z-index: 2; }
 .insta-post-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.3rem; }
 .insta-post:hover .insta-post-overlay { opacity: 1; }
 .insta-post-overlay span { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; color: var(--white-raw); }
@@ -538,6 +604,8 @@ p, li { font-family: var(--serif); font-weight: 300; line-height: 1.75; }
 .article-card { background: var(--iron); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
 .article-card:hover { transform: translateY(-3px); border-color: rgba(200,200,200,0.15); }
 .article-img { aspect-ratio: 16/9; background: var(--steel-dk); display: flex; align-items: center; justify-content: center; font-size: 3rem; opacity: 0.2; position: relative; overflow: hidden; }
+.article-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; opacity: 1; }
+.article-img > *:not(img) { position: relative; z-index: 2; }
 .article-body { padding: 1.5rem; }
 .article-cat { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--chrome); margin-bottom: 0.5rem; }
 .article-title { font-family: var(--heading); font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white-raw); margin-bottom: 0.6rem; line-height: 1.3; }
