@@ -6,7 +6,18 @@
   <title>Timber Homewares — Plummo's Timber | Australian Timber Artisans</title>
   <meta name="description" content="Plummo's Timber — Timber Homewares. Handcrafted in Australia."/>
   <link rel="stylesheet" href="css/main.css"/>
-  
+  <style>
+    .prod-card{background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s, border-color 0.3s;}
+    .prod-card:hover{transform:translateY(-4px);border-color:rgba(200,200,200,0.2);}
+    .prod-card-media{aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+    .prod-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;transition:transform 0.5s ease, filter 0.5s ease;filter:brightness(0.92) saturate(0.95);}
+    .prod-card:hover .prod-card-img{transform:scale(1.06);filter:brightness(1.12) saturate(1.15);}
+    .prod-card-overlay{position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));z-index:2;transition:opacity 0.5s ease;pointer-events:none;}
+    .prod-card:hover .prod-card-overlay{opacity:0.35;}
+    .prod-card-badge{position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;z-index:3;}
+    .prod-card-enquire{font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;}
+    .prod-card-enquire:hover{opacity:0.85;}
+  </style>
 </head>
 <body>
 <nav id="nav">
@@ -66,7 +77,6 @@
     <span style="color:var(--silver-lt);">Homewares</span>
   </div>
 </div>
-
 <section class="section">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start;">
@@ -75,172 +85,159 @@
         <h2 class="section-title reveal reveal-delay-1">Timber <em>Homewares</em></h2>
         <p style="font-family:var(--serif);font-size:1rem;color:var(--chrome);line-height:1.85;max-width:620px;margin-bottom:2.5rem;" class="reveal reveal-delay-2">Functional art for the modern Aussie home. Every piece is hand-turned or hand-shaped from solid native timber and finished with food-safe oils and lacquers. Designed to be used daily, not hidden in a cabinet.</p>
         <div class="grid-3 reveal reveal-delay-2" style="gap:1.5rem;">
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/spotted-gum-chopping-board.jpg" alt="Spotted Gum Chopping Board" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Spotted Gum Chopping Board</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Large serving and chopping board with juice groove. Food-safe oil finish. Grain sealed for longevity.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">44cm x 28cm approx.</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$95</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/banksia-nut-bud-vase.jpg" alt="Banksia Nut Bud Vase" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">One of a Kind</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Banksia Nut Bud Vase</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Hand-turned hollow form from a genuine Banksia nut. Striking natural honeycomb texture.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Each nut is unique</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$55</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/native-timber-coaster-set-x4.jpg" alt="Native Timber Coaster Set x4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Gift Ready</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Native Timber Coaster Set x4</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Four hand-turned coasters in matching native timber. Cork backing. Presented in gift box.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Huon Pine or Spotted Gum</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$48</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/camphor-laurel-serving-bowl.jpg" alt="Camphor Laurel Serving Bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Camphor Laurel Serving Bowl</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Freeform bowl turned from fragrant Camphor Laurel. Food-safe finish. Stunning grain.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">28cm diameter approx.</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$115</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/timber-pepper-salt-grinder-set.jpg" alt="Timber Pepper  Salt Grinder Set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Set of 2</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Pepper &amp; Salt Grinder Set</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Matching pair of hand-turned pepper and salt grinders. Ceramic grinding mechanism.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Ceramic mechanism incl.</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$145</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/bookend-pair-sheoak.jpg" alt="Bookend Pair - Sheoak" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Set of 2</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Bookend Pair — Sheoak</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Heavy solid Sheoak bookends. Felt base pads. Architectural and functional.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Felt pads included</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$88</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/timber-phone-tablet-stand.jpg" alt="Timber Phone  Tablet Stand" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Phone &amp; Tablet Stand</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Adjustable angle stand. Non-slip base. Suits all phone and tablet sizes.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Universal fit</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$42</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/key-bowl-red-mallee-burl.jpg" alt="Key Bowl - Red Mallee Burl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Key Bowl — Red Mallee Burl</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Wild burl entry bowl for keys, coins and the everyday chaos. 18cm diameter.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">18cm diameter</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$65</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/timber-candle-holder-set.jpg" alt="Timber Candle Holder Set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🏠</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Set of 3</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Candle Holder Set</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Set of 3 graduated candle holders in matching native timber. Taper or pillar candles.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Taper &amp; pillar ready</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$72</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/spotted-gum-chopping-board.jpg" alt="Spotted Gum Chopping Board" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Spotted Gum Chopping Board</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Large serving and chopping board with juice groove. Food-safe oil finish. Grain sealed for longevity.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">44cm x 28cm approx.</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$95</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/banksia-nut-bud-vase.jpg" alt="Banksia Nut Bud Vase" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">One of a Kind</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Banksia Nut Bud Vase</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Hand-turned hollow form from a genuine Banksia nut. Striking natural honeycomb texture.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Each nut is unique</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$55</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/native-timber-coaster-set-x4.jpg" alt="Native Timber Coaster Set x4" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Gift Ready</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Native Timber Coaster Set x4</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Four hand-turned coasters in matching native timber. Cork backing. Presented in gift box.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Huon Pine or Spotted Gum</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$48</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/camphor-laurel-serving-bowl.jpg" alt="Camphor Laurel Serving Bowl" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Camphor Laurel Serving Bowl</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Freeform bowl turned from fragrant Camphor Laurel. Food-safe finish. Stunning grain.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">28cm diameter approx.</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$115</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/timber-pepper-salt-grinder-set.jpg" alt="Timber Pepper Salt Grinder Set" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Set of 2</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Pepper &amp; Salt Grinder Set</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Matching pair of hand-turned pepper and salt grinders. Ceramic grinding mechanism.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Ceramic mechanism incl.</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$145</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/bookend-pair-sheoak.jpg" alt="Bookend Pair - Sheoak" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Set of 2</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Bookend Pair — Sheoak</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Heavy solid Sheoak bookends. Felt base pads. Architectural and functional.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Felt pads included</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$88</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/timber-phone-tablet-stand.jpg" alt="Timber Phone Tablet Stand" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Phone &amp; Tablet Stand</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Adjustable angle stand. Non-slip base. Suits all phone and tablet sizes.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Universal fit</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$42</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/key-bowl-red-mallee-burl.jpg" alt="Key Bowl - Red Mallee Burl" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Key Bowl — Red Mallee Burl</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Wild burl entry bowl for keys, coins and the everyday chaos. 18cm diameter.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">18cm diameter</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$65</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/timber-candle-holder-set.jpg" alt="Timber Candle Holder Set" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Set of 3</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Candle Holder Set</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Set of 3 graduated candle holders in matching native timber. Taper or pillar candles.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Taper &amp; pillar ready</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$72</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div style="position:sticky;top:100px;">
         <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--silver);padding:2rem;margin-bottom:1.5rem;">
-  <h3 style="font-family:var(--display);font-size:1.6rem;color:var(--white-raw);margin-bottom:0.6rem;">Custom Homewares</h3>
-  <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;margin-bottom:1.2rem;">Need a specific size, timber or finish? We take custom orders on all homeware pieces.</p>
-  <a href="contact.html" style="font-family:var(--heading);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.65rem 1.4rem;text-decoration:none;display:inline-block;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);">Request Custom Piece →</a>
-</div>
+          <h3 style="font-family:var(--display);font-size:1.6rem;color:var(--white-raw);margin-bottom:0.6rem;">Custom Homewares</h3>
+          <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;margin-bottom:1.2rem;">Need a specific size, timber or finish? We take custom orders on all homeware pieces.</p>
+          <a href="contact.html" style="font-family:var(--heading);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.65rem 1.4rem;text-decoration:none;display:inline-block;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);">Request Custom Piece →</a>
+        </div>
         <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--silver);padding:2rem;margin-bottom:1.5rem;">
-  <h3 style="font-family:var(--display);font-size:1.6rem;color:var(--white-raw);margin-bottom:0.6rem;">Wholesale Enquiries</h3>
-  <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;margin-bottom:1.2rem;">Stock Plummo's Timber homewares in your store. Contact us for wholesale pricing.</p>
-  <a href="contact.html" style="font-family:var(--heading);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.65rem 1.4rem;text-decoration:none;display:inline-block;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);">Wholesale Enquiry →</a>
-</div>
+          <h3 style="font-family:var(--display);font-size:1.6rem;color:var(--white-raw);margin-bottom:0.6rem;">Wholesale Enquiries</h3>
+          <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;margin-bottom:1.2rem;">Stock Plummo's Timber homewares in your store. Contact us for wholesale pricing.</p>
+          <a href="contact.html" style="font-family:var(--heading);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.65rem 1.4rem;text-decoration:none;display:inline-block;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);">Wholesale Enquiry →</a>
+        </div>
         <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);padding:1.5rem;">
           <div style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--chrome-dk);margin-bottom:1rem;">Care Note</div>
           <p style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.65;margin-bottom:0.8rem;">All food-contact pieces are finished with food-safe mineral oil. Hand wash only — never dishwasher. Re-oil every 3–6 months.</p>

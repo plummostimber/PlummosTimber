@@ -1,159 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>3D Printed Tools &mdash; Plummo's Timber</title>
-  <link rel="stylesheet" href="css/main.css"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>3D Printed Tools &mdash; Plummo's Timber</title>
+<link rel="stylesheet" href="css/main.css"/>
+<style>
+.prod-card{background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s, border-color 0.3s;}
+.prod-card:hover{transform:translateY(-4px);border-color:rgba(200,200,200,0.2);}
+.prod-card-media{aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.prod-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;transition:transform 0.5s ease, filter 0.5s ease;filter:brightness(0.92) saturate(0.95);}
+.prod-card:hover .prod-card-img{transform:scale(1.06);filter:brightness(1.12) saturate(1.15);}
+.prod-card-overlay{position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));z-index:2;transition:opacity 0.5s ease;pointer-events:none;}
+.prod-card:hover .prod-card-overlay{opacity:0.3;}
+.prod-card-badge{position:absolute;top:0.7rem;left:0.7rem;font-family:var(--mono);font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.18rem 0.5rem;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.2);z-index:3;}
+</style>
 </head>
 <body>
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="images/logo.png" class="nav-logo-img" alt="Plummo's Timber"/></a>
-  <ul class="nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="products.html" class="active">Products &#9660;</a>
-      <ul class="dropdown-menu">
-        <li><a href="products-pens.html">Acrylic &amp; Wood Pens</a></li>
-        <li><a href="products-homewares.html">Homewares</a></li>
-        <li><a href="products-bar.html">Bar Accessories</a></li>
-        <li><a href="products-furniture.html">Furniture &amp; Tables</a></li>
-        <li><a href="products-resin.html">Wood &amp; Resin Art</a></li>
-        <li><a href="products-3d.html">3D Printed Tools</a></li>
-        <li><a href="products-custom.html">Custom Orders</a></li>
-      </ul>
-    </li>
-    <li><a href="community.html">Community &#9660;</a>
-      <ul class="dropdown-menu">
-        <li><a href="community.html">Hub Overview</a></li>
-        <li><a href="community.html#discussions">Discussions</a></li>
-        <li><a href="community.html#articles">Articles</a></li>
-        <li><a href="community.html#videos">Videos &amp; Demos</a></li>
-        <li><a href="community.html#social">Instagram Feed</a></li>
-      </ul>
-    </li>
-    <li><a href="podcast.html">Podcast</a></li>
-    <li><a href="care-guide.html">Timber Care</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="shop.html" class="nav-shop">Shop Now</a>
-  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+<a href="index.html" class="nav-logo"><img src="images/logo.png" class="nav-logo-img" alt="Plummo's Timber"/></a>
+<ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="products.html" class="active">Products &#9660;</a>
+<ul class="dropdown-menu">
+<li><a href="products-pens.html">Acrylic &amp; Wood Pens</a></li>
+<li><a href="products-homewares.html">Homewares</a></li>
+<li><a href="products-bar.html">Bar Accessories</a></li>
+<li><a href="products-furniture.html">Furniture &amp; Tables</a></li>
+<li><a href="products-resin.html">Wood &amp; Resin Art</a></li>
+<li><a href="products-3d.html">3D Printed Tools</a></li>
+<li><a href="products-custom.html">Custom Orders</a></li>
+</ul>
+</li>
+<li><a href="community.html">Community &#9660;</a>
+<ul class="dropdown-menu">
+<li><a href="community.html">Hub Overview</a></li>
+<li><a href="community.html#discussions">Discussions</a></li>
+<li><a href="community.html#articles">Articles</a></li>
+<li><a href="community.html#videos">Videos &amp; Demos</a></li>
+<li><a href="community.html#social">Instagram Feed</a></li>
+</ul>
+</li>
+<li><a href="podcast.html">Podcast</a></li>
+<li><a href="care-guide.html">Timber Care</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<a href="shop.html" class="nav-shop">Shop Now</a>
+<button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="products.html">Products</a>
-  <a href="products-pens.html" class="mob-sub">&#8627; Acrylic &amp; Wood Pens</a>
-  <a href="products-homewares.html" class="mob-sub">&#8627; Homewares</a>
-  <a href="products-bar.html" class="mob-sub">&#8627; Bar Accessories</a>
-  <a href="products-furniture.html" class="mob-sub">&#8627; Furniture &amp; Tables</a>
-  <a href="products-resin.html" class="mob-sub">&#8627; Wood &amp; Resin Art</a>
-  <a href="products-3d.html" class="mob-sub">&#8627; 3D Printed Tools</a>
-  <a href="products-custom.html" class="mob-sub">&#8627; Custom Orders</a>
-  <a href="community.html">Community</a>
-  <a href="podcast.html">Podcast</a>
-  <a href="care-guide.html">Timber Care</a>
-  <a href="shop.html">Shop</a>
-  <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="products.html">Products</a>
+<a href="products-pens.html" class="mob-sub">&#8627; Acrylic &amp; Wood Pens</a>
+<a href="products-homewares.html" class="mob-sub">&#8627; Homewares</a>
+<a href="products-bar.html" class="mob-sub">&#8627; Bar Accessories</a>
+<a href="products-furniture.html" class="mob-sub">&#8627; Furniture &amp; Tables</a>
+<a href="products-resin.html" class="mob-sub">&#8627; Wood &amp; Resin Art</a>
+<a href="products-3d.html" class="mob-sub">&#8627; 3D Printed Tools</a>
+<a href="products-custom.html" class="mob-sub">&#8627; Custom Orders</a>
+<a href="community.html">Community</a>
+<a href="podcast.html">Podcast</a>
+<a href="care-guide.html">Timber Care</a>
+<a href="shop.html">Shop</a>
+<a href="contact.html">Contact</a>
 </div>
 <div class="page-hero">
-  <div class="page-hero-bg"></div><div class="page-hero-lines"></div><div class="page-hero-scratch"></div>
-  <div class="page-hero-content">
-    <div class="page-hero-label">Collection 06</div>
-    <h1>3D Printed<br/><em>Tools</em></h1>
-  </div>
+<div class="page-hero-bg"></div><div class="page-hero-lines"></div><div class="page-hero-scratch"></div>
+<div class="page-hero-content">
+<div class="page-hero-label">Collection 06</div>
+<h1>3D Printed<br/><em>Tools</em></h1>
+</div>
 </div>
 <div style="background:var(--charcoal);border-bottom:1px solid rgba(255,255,255,0.05);padding:0.85rem 4rem;">
-  <div class="container" style="display:flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--steel-md);">
-    <a href="index.html" style="color:var(--chrome-dk);text-decoration:none;">Home</a>
-    <span>/</span>
-    <a href="products.html" style="color:var(--chrome-dk);text-decoration:none;">Products</a>
-    <span>/</span>
-    <span style="color:var(--silver-lt);">3D Printed Tools</span>
-  </div>
+<div class="container" style="display:flex;align-items:center;gap:0.6rem;font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--steel-md);">
+<a href="index.html" style="color:var(--chrome-dk);text-decoration:none;">Home</a>
+<span>/</span>
+<a href="products.html" style="color:var(--chrome-dk);text-decoration:none;">Products</a>
+<span>/</span>
+<span style="color:var(--silver-lt);">3D Printed Tools</span>
+</div>
 </div>
 <section class="section"><div class="container">
-  <div style="display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start;">
-    <div>
-      <p class="tag reveal">For the Modern Woodturner</p>
-      <h2 class="section-title reveal reveal-delay-1">3D Printed <em>Tools</em></h2>
-      <p style="font-family:var(--serif);font-size:1rem;color:var(--chrome);line-height:1.85;max-width:620px;margin-bottom:2rem;" class="reveal reveal-delay-2">
-        Workshop-grade accessories designed in-house and printed in PETG and PLA. Precision fit, practically priced. Designed by a turner, for turners &mdash; no more hunting for the right jig.
-      </p>
-      <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--steel);padding:1.2rem 1.8rem;margin-bottom:2.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;" class="reveal reveal-delay-2">
-        <span style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;border:1px solid rgba(255,255,255,0.12);color:var(--chrome);">PETG &mdash; Workshop Grade</span>
-        <span style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;border:1px solid rgba(255,255,255,0.12);color:var(--chrome);">PLA+ &mdash; Precision Parts</span>
-        <span style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;border:1px solid rgba(255,255,255,0.12);color:var(--chrome);">ABS &mdash; Heat Resistant</span>
-      </div>
-      <div class="grid-3 reveal reveal-delay-2" style="gap:1.5rem;"><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/pen-mandrel-saver.jpg" alt="Pen Mandrel Saver" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div><span style="position:absolute;top:0.7rem;left:0.7rem;font-family:var(--mono);font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.18rem 0.5rem;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.2);">Best Seller</span></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Pen Mandrel Saver</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Precision PETG mandrel saver for standard pen mandrels. Runs true, protects your centres.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Standard mandrels</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$22</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/pen-blank-drilling-jig.jpg" alt="Pen Blank Drilling Jig" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Pen Blank Drilling Jig</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Accurate centre-drilling jig for pen blanks up to 20mm. V-groove design.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Up to 20mm</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$28</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/barrel-trimmer-holder.jpg" alt="Barrel Trimmer Holder" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Barrel Trimmer Holder</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Holds barrel trimmers securely at 90 degrees. Eliminates drift on the trim.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Standard trimmers</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$18</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/chuck-key-holder.jpg" alt="Chuck Key Holder" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Chuck Key Holder</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Magnetic mount chuck key holder for your lathe bed. Never lose it again.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Magnetic mount</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$15</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/pen-blank-storage-tray.jpg" alt="Pen Blank Storage Tray" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Pen Blank Storage Tray</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Organiser tray for 20 pen blanks. Label slots, stackable design.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Holds 20 blanks</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$24</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/steady-rest-insert-set.jpg" alt="Steady Rest Insert Set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div><span style="position:absolute;top:0.7rem;left:0.7rem;font-family:var(--mono);font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.18rem 0.5rem;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.2);">Set of 3</span></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Steady Rest Insert Set</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Custom-fit inserts for popular steady rest sizes. 3-piece set.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Fits popular brands</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$35</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/skew-chisel-rest.jpg" alt="Skew Chisel Rest" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9881;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Skew Chisel Rest</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Angled rest for skew chisels. Protects your edge and your bench.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Protects edge</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$20</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'"><div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.18;position:relative;overflow:hidden;"><img src="images/custom-jig-your-design.jpg" alt="Custom Jig - Your Design" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/><span style="position:relative;z-index:2;">&#9997;&#65039;</span><div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.6));"></div><span style="position:absolute;top:0.7rem;left:0.7rem;font-family:var(--mono);font-size:0.48rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.18rem 0.5rem;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.2);">Custom</span></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Custom Jig &mdash; Your Design</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Specific workshop problem? We design and print custom solutions to your specs.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Email your specs</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">From $30</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div></div>
-    </div>
-    <div style="position:sticky;top:100px;">
-      <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--silver);padding:1.8rem;margin-bottom:1.5rem;">
-        <h3 style="font-family:var(--display);font-size:1.5rem;color:var(--white-raw);margin-bottom:0.5rem;">Custom Jig Design</h3>
-        <p style="font-family:var(--serif);font-size:0.83rem;color:var(--chrome);line-height:1.62;margin-bottom:1.1rem;">Have a specific workshop problem we haven't solved? Send us your specs and we'll design and print a custom solution.</p>
-        <a href="contact.html" class="btn btn-primary btn-sm">Request Custom Design &#8594;</a>
-      </div>
-      <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);padding:1.5rem;">
-        <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--chrome-dk);margin-bottom:0.8rem;">Care &amp; Limits</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
-          <li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#9888;</span> Keep away from direct heat</li>
-          <li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#9888;</span> Not for metal turning</li>
-          <li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#10003;</span> Wipe clean with damp cloth</li>
-          <li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#10003;</span> Replace if cracking occurs</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start;">
+<div>
+<p class="tag reveal">For the Modern Woodturner</p>
+<h2 class="section-title reveal reveal-delay-1">3D Printed <em>Tools</em></h2>
+<p style="font-family:var(--serif);font-size:1rem;color:var(--chrome);line-height:1.85;max-width:620px;margin-bottom:2rem;" class="reveal reveal-delay-2">
+Workshop-grade accessories designed in-house and printed in PETG and PLA. Precision fit, practically priced. Designed by a turner, for turners &mdash; no more hunting for the right jig.
+</p>
+<div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--steel);padding:1.2rem 1.8rem;margin-bottom:2.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;" class="reveal reveal-delay-2">
+<span style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;border:1px solid rgba(255,255,255,0.12);color:var(--chrome);">PETG &mdash; Workshop Grade</span>
+<span style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;border:1px solid rgba(255,255,255,0.12);color:var(--chrome);">PLA+ &mdash; Precision Parts</span>
+<span style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.28rem 0.7rem;border:1px solid rgba(255,255,255,0.12);color:var(--chrome);">ABS &mdash; Heat Resistant</span>
+</div>
+<div class="grid-3 reveal reveal-delay-2" style="gap:1.5rem;"><div class="prod-card"><div class="prod-card-media"><img src="images/pen-mandrel-saver.jpg" alt="Pen Mandrel Saver" class="prod-card-img"/><div class="prod-card-overlay"></div><span class="prod-card-badge">Best Seller</span></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Pen Mandrel Saver</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Precision PETG mandrel saver for standard pen mandrels. Runs true, protects your centres.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Standard mandrels</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$22</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/pen-blank-drilling-jig.jpg" alt="Pen Blank Drilling Jig" class="prod-card-img"/><div class="prod-card-overlay"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Pen Blank Drilling Jig</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Accurate centre-drilling jig for pen blanks up to 20mm. V-groove design.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Up to 20mm</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$28</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/barrel-trimmer-holder.jpg" alt="Barrel Trimmer Holder" class="prod-card-img"/><div class="prod-card-overlay"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Barrel Trimmer Holder</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Holds barrel trimmers securely at 90 degrees. Eliminates drift on the trim.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Standard trimmers</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$18</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/chuck-key-holder.jpg" alt="Chuck Key Holder" class="prod-card-img"/><div class="prod-card-overlay"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Chuck Key Holder</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Magnetic mount chuck key holder for your lathe bed. Never lose it again.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Magnetic mount</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$15</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/pen-blank-storage-tray.jpg" alt="Pen Blank Storage Tray" class="prod-card-img"/><div class="prod-card-overlay"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Pen Blank Storage Tray</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Organiser tray for 20 pen blanks. Label slots, stackable design.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Holds 20 blanks</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$24</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/steady-rest-insert-set.jpg" alt="Steady Rest Insert Set" class="prod-card-img"/><div class="prod-card-overlay"></div><span class="prod-card-badge">Set of 3</span></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Steady Rest Insert Set</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Custom-fit inserts for popular steady rest sizes. 3-piece set.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Fits popular brands</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$35</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/skew-chisel-rest.jpg" alt="Skew Chisel Rest" class="prod-card-img"/><div class="prod-card-overlay"></div></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Skew Chisel Rest</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Angled rest for skew chisels. Protects your edge and your bench.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Protects edge</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$20</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div><div class="prod-card"><div class="prod-card-media"><img src="images/custom-jig-your-design.jpg" alt="Custom Jig - Your Design" class="prod-card-img"/><div class="prod-card-overlay"></div><span class="prod-card-badge">Custom</span></div><div style="padding:1.2rem 1.4rem;"><div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.38rem;">Custom Jig &mdash; Your Design</div><div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.58;margin-bottom:0.7rem;">Specific workshop problem? We design and print custom solutions to your specs.</div><div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--timber-hi);margin-top:0.3rem;">Email your specs</div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.85rem;margin-top:0.85rem;"><span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">From $30</span><a href="contact.html" class="btn btn-primary btn-sm">Enquire</a></div></div></div></div>
+</div>
+<div style="position:sticky;top:100px;">
+<div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--silver);padding:1.8rem;margin-bottom:1.5rem;">
+<h3 style="font-family:var(--display);font-size:1.5rem;color:var(--white-raw);margin-bottom:0.5rem;">Custom Jig Design</h3>
+<p style="font-family:var(--serif);font-size:0.83rem;color:var(--chrome);line-height:1.62;margin-bottom:1.1rem;">Have a specific workshop problem we haven't solved? Send us your specs and we'll design and print a custom solution.</p>
+<a href="contact.html" class="btn btn-primary btn-sm">Request Custom Design &#8594;</a>
+</div>
+<div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);padding:1.5rem;">
+<div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--chrome-dk);margin-bottom:0.8rem;">Care &amp; Limits</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+<li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#9888;</span> Keep away from direct heat</li>
+<li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#9888;</span> Not for metal turning</li>
+<li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#10003;</span> Wipe clean with damp cloth</li>
+<li style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);display:flex;gap:0.6rem;"><span style="color:var(--silver);">&#10003;</span> Replace if cracking occurs</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section><section class="section" style="background:var(--charcoal);padding-top:2.5rem;padding-bottom:2.5rem;"><div class="container text-center"><p class="tag" style="justify-content:center;">[ Explore More Collections ]</p><div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem;"><a href="products-pens.html" class="btn btn-outline btn-sm">Pens</a> <a href="products-homewares.html" class="btn btn-outline btn-sm">Homewares</a> <a href="products-bar.html" class="btn btn-outline btn-sm">Bar Accessories</a> <a href="products-furniture.html" class="btn btn-outline btn-sm">Furniture</a> <a href="products-resin.html" class="btn btn-outline btn-sm">Resin Art</a> <a href="products-custom.html" class="btn btn-outline btn-sm">Custom Orders</a></div></div></section>
 <footer id="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="images/logo.png" class="footer-logo-img" alt="Plummo's Timber"/>
-        <div class="brand-tag">// Australian Timber Artisans</div>
-        <p>Handcrafted timber art, furniture, pens, homewares and bar accessories from Australia's finest native and exotic timbers.</p>
-        <div class="footer-socials">
-          <a href="https://instagram.com/plummostimber" target="_blank" class="social-link">ig</a>
-          <a href="#" class="social-link">fb</a>
-          <a href="#" class="social-link">yt</a>
-          <a href="#" class="social-link">tt</a>
-        </div>
-      </div>
-      <div class="footer-col"><h4>Products</h4><ul>
-        <li><a href="products-pens.html">Acrylic &amp; Wood Pens</a></li>
-        <li><a href="products-homewares.html">Homewares</a></li>
-        <li><a href="products-bar.html">Bar Accessories</a></li>
-        <li><a href="products-furniture.html">Furniture &amp; Tables</a></li>
-        <li><a href="products-resin.html">Wood &amp; Resin Art</a></li>
-        <li><a href="products-3d.html">3D Printed Tools</a></li>
-        <li><a href="products-custom.html">Custom Orders</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Community</h4><ul>
-        <li><a href="community.html">Community Hub</a></li>
-        <li><a href="community.html#discussions">Discussions</a></li>
-        <li><a href="community.html#videos">Videos &amp; Demos</a></li>
-        <li><a href="podcast.html">Timber Bros Podcast</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Company</h4><ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="care-guide.html">Timber Care Guide</a></li>
-        <li><a href="shop.html">Online Shop</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Use</a></li>
-        <li><a href="shipping.html">Shipping Policy</a></li>
-        <li><a href="returns.html">Returns &amp; Refunds</a></li>
-      </ul>
-      <br/><a href="https://instagram.com/plummostimber" target="_blank" class="footer-instagram">&#128247; @plummostimber</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Plummo's Timber. All rights reserved. Proudly handcrafted in Australia &#127462;&#127482;</p>
-      <p class="made">Google Sites &rarr; <span>GitHub Pages</span></p>
-    </div>
-  </div>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<img src="images/logo.png" class="footer-logo-img" alt="Plummo's Timber"/>
+<div class="brand-tag">// Australian Timber Artisans</div>
+<p>Handcrafted timber art, furniture, pens, homewares and bar accessories from Australia's finest native and exotic timbers.</p>
+<div class="footer-socials">
+<a href="https://instagram.com/plummostimber" target="_blank" class="social-link">ig</a>
+<a href="#" class="social-link">fb</a>
+<a href="#" class="social-link">yt</a>
+<a href="#" class="social-link">tt</a>
+</div>
+</div>
+<div class="footer-col"><h4>Products</h4><ul>
+<li><a href="products-pens.html">Acrylic &amp; Wood Pens</a></li>
+<li><a href="products-homewares.html">Homewares</a></li>
+<li><a href="products-bar.html">Bar Accessories</a></li>
+<li><a href="products-furniture.html">Furniture &amp; Tables</a></li>
+<li><a href="products-resin.html">Wood &amp; Resin Art</a></li>
+<li><a href="products-3d.html">3D Printed Tools</a></li>
+<li><a href="products-custom.html">Custom Orders</a></li>
+</ul></div>
+<div class="footer-col"><h4>Community</h4><ul>
+<li><a href="community.html">Community Hub</a></li>
+<li><a href="community.html#discussions">Discussions</a></li>
+<li><a href="community.html#videos">Videos &amp; Demos</a></li>
+<li><a href="podcast.html">Timber Bros Podcast</a></li>
+</ul></div>
+<div class="footer-col"><h4>Company</h4><ul>
+<li><a href="about.html">About Us</a></li>
+<li><a href="care-guide.html">Timber Care Guide</a></li>
+<li><a href="shop.html">Online Shop</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul></div>
+<div class="footer-col"><h4>Legal</h4><ul>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms of Use</a></li>
+<li><a href="shipping.html">Shipping Policy</a></li>
+<li><a href="returns.html">Returns &amp; Refunds</a></li>
+</ul>
+<br/><a href="https://instagram.com/plummostimber" target="_blank" class="footer-instagram">&#128247; @plummostimber</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Plummo's Timber. All rights reserved. Proudly handcrafted in Australia &#127462;&#127482;</p>
+<p class="made">Google Sites &rarr; <span>GitHub Pages</span></p>
+</div>
+</div>
 </footer>
 <script src="js/main.js"></script>
 </body>

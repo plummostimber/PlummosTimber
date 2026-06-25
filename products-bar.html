@@ -6,7 +6,18 @@
   <title>Bar Accessories — Plummo's Timber | Australian Timber Artisans</title>
   <meta name="description" content="Plummo's Timber — Bar Accessories. Handcrafted in Australia."/>
   <link rel="stylesheet" href="css/main.css"/>
-  
+  <style>
+    .prod-card{background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s, border-color 0.3s;}
+    .prod-card:hover{transform:translateY(-4px);border-color:rgba(200,200,200,0.2);}
+    .prod-card-media{aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+    .prod-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;transition:transform 0.5s ease, filter 0.5s ease;filter:brightness(0.92) saturate(0.95);}
+    .prod-card:hover .prod-card-img{transform:scale(1.06);filter:brightness(1.12) saturate(1.15);}
+    .prod-card-overlay{position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));z-index:2;transition:opacity 0.5s ease;pointer-events:none;}
+    .prod-card:hover .prod-card-overlay{opacity:0.35;}
+    .prod-card-badge{position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;z-index:3;}
+    .prod-card-enquire{font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;}
+    .prod-card-enquire:hover{opacity:0.85;}
+  </style>
 </head>
 <body>
 <nav id="nav">
@@ -66,7 +77,6 @@
     <span style="color:var(--silver-lt);">Bar Accessories</span>
   </div>
 </div>
-
 <section class="section">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start;">
@@ -75,167 +85,156 @@
         <h2 class="section-title reveal reveal-delay-1">Bar <em>Accessories</em></h2>
         <p style="font-family:var(--serif);font-size:1rem;color:var(--chrome);line-height:1.85;max-width:620px;margin-bottom:2.5rem;" class="reveal reveal-delay-2">Elevate your home bar with handcrafted timber accessories built for daily use. Every muddler, stopper and board is turned or shaped from solid native hardwoods — because your whisky deserves better than plastic.</p>
         <div class="grid-3 reveal reveal-delay-2" style="gap:1.5rem;">
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/timber-muddler.jpg" alt="Timber Muddler" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Best Seller</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Muddler</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Hand-turned hardwood muddler with comfortable grip. Ideal for cocktails and mocktails. Presented in gift box.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Ships in gift box</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$38</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/muddler-set-x2-mixed-timbers.jpg" alt="Muddler Set x2 - Mixed Timbers" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Gift Set</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Muddler Set x2 — Mixed Timbers</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Two hand-turned muddlers in contrasting native timbers. Perfect gift set for the home bartender.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">2 muddlers + gift box</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$68</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/sheoak-bottle-stopper.jpg" alt="Sheoak Bottle Stopper" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Sheoak Bottle Stopper</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Turned Sheoak with chrome stopper mechanism. Fits most standard wine and spirit bottles.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Chrome mechanism</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$38</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/personalised-whisky-board.jpg" alt="Personalised Whisky Board" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Custom</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Personalised Whisky Board</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Engraved timber serving board with 2 crystal-style tumblers. Custom text engraving available.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Engraving available</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$120</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/native-timber-bar-coasters-x4.jpg" alt="Native Timber Bar Coasters x4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Set of 4</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Native Timber Bar Coasters x4</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Set of 4 hand-turned bar coasters in native hardwood. Cork backing, gift boxed.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Cork backed</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$48</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/wine-bottle-holder-resin.jpg" alt="Wine Bottle Holder - Resin" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Signature</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Wine Bottle Holder — Resin</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Sculptural wine bottle holder combining live edge timber and clear resin. A showpiece for any table.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Each one unique</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$145</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/cocktail-pick-set-x6.jpg" alt="Cocktail Pick Set x6" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Set of 6</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Cocktail Pick Set x6</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Set of 6 hand-turned cocktail picks in matching timber. Presented in a timber display block.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Display block included</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$55</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/cheese-charcuterie-board.jpg" alt="Cheese  Charcuterie Board" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Cheese &amp; Charcuterie Board</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Large handle-less serving board with juice groove. Seasoned with board butter. Great entertainer piece.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Food-safe finish</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$88</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/custom-bar-set-your-timber.jpg" alt="Custom Bar Set - Your Timber" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🍸</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Commission</span>
-  </div>
-  <div style="padding:1.3rem 1.4rem;">
-    <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Custom Bar Set — Your Timber</div>
-    <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Commission a matching bar set — muddlers, stoppers, coasters and board — in a timber of your choice.</div>
-    <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Contact us to discuss</div>
-    <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
-      <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">POA</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
-    </div>
-  </div>
-</div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/timber-muddler.jpg" alt="Timber Muddler" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Best Seller</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Timber Muddler</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Hand-turned hardwood muddler with comfortable grip. Ideal for cocktails and mocktails. Presented in gift box.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Ships in gift box</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$38</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/muddler-set-x2-mixed-timbers.jpg" alt="Muddler Set x2 - Mixed Timbers" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Gift Set</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Muddler Set x2 — Mixed Timbers</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Two hand-turned muddlers in contrasting native timbers. Perfect gift set for the home bartender.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">2 muddlers + gift box</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$68</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/sheoak-bottle-stopper.jpg" alt="Sheoak Bottle Stopper" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Sheoak Bottle Stopper</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Turned Sheoak with chrome stopper mechanism. Fits most standard wine and spirit bottles.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Chrome mechanism</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$38</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/personalised-whisky-board.jpg" alt="Personalised Whisky Board" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Custom</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Personalised Whisky Board</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Engraved timber serving board with 2 crystal-style tumblers. Custom text engraving available.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Engraving available</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$120</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/native-timber-bar-coasters-x4.jpg" alt="Native Timber Bar Coasters x4" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Set of 4</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Native Timber Bar Coasters x4</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Set of 4 hand-turned bar coasters in native hardwood. Cork backing, gift boxed.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Cork backed</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$48</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/wine-bottle-holder-resin.jpg" alt="Wine Bottle Holder - Resin" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Signature</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Wine Bottle Holder — Resin</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Sculptural wine bottle holder combining live edge timber and clear resin. A showpiece for any table.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Each one unique</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$145</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/cocktail-pick-set-x6.jpg" alt="Cocktail Pick Set x6" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Set of 6</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Cocktail Pick Set x6</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Set of 6 hand-turned cocktail picks in matching timber. Presented in a timber display block.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Display block included</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$55</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/cheese-charcuterie-board.jpg" alt="Cheese Charcuterie Board" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Cheese &amp; Charcuterie Board</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Large handle-less serving board with juice groove. Seasoned with board butter. Great entertainer piece.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Food-safe finish</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$88</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-card">
+            <div class="prod-card-media">
+              <img src="images/custom-bar-set-your-timber.jpg" alt="Custom Bar Set - Your Timber" class="prod-card-img"/>
+              <div class="prod-card-overlay"></div>
+              <span class="prod-card-badge">Commission</span>
+            </div>
+            <div style="padding:1.3rem 1.4rem;">
+              <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Custom Bar Set — Your Timber</div>
+              <div style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.6;margin-bottom:0.9rem;">Commission a matching bar set — muddlers, stoppers, coasters and board — in a timber of your choice.</div>
+              <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Contact us to discuss</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
+                <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">POA</span>
+                <a href="contact.html" class="prod-card-enquire">Enquire →</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div style="position:sticky;top:100px;">
         <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--silver);padding:2rem;margin-bottom:1.5rem;">
-  <h3 style="font-family:var(--display);font-size:1.6rem;color:var(--white-raw);margin-bottom:0.6rem;">Commission a Bar Set</h3>
-  <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;margin-bottom:1.2rem;">Matching muddlers, stoppers, coasters and board in your chosen timber. Perfect housewarming or wedding gift.</p>
-  <a href="contact.html" style="font-family:var(--heading);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.65rem 1.4rem;text-decoration:none;display:inline-block;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);">Enquire Now →</a>
-</div>
+          <h3 style="font-family:var(--display);font-size:1.6rem;color:var(--white-raw);margin-bottom:0.6rem;">Commission a Bar Set</h3>
+          <p style="font-family:var(--serif);font-size:0.85rem;color:var(--chrome);line-height:1.65;margin-bottom:1.2rem;">Matching muddlers, stoppers, coasters and board in your chosen timber. Perfect housewarming or wedding gift.</p>
+          <a href="contact.html" style="font-family:var(--heading);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.65rem 1.4rem;text-decoration:none;display:inline-block;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);">Enquire Now →</a>
+        </div>
         <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,0.06);padding:1.5rem;margin-bottom:1.5rem;">
           <div style="font-family:var(--mono);font-size:0.56rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--chrome-dk);margin-bottom:0.8rem;">Timber Care</div>
           <p style="font-family:var(--serif);font-size:0.82rem;color:var(--chrome);line-height:1.65;margin-bottom:0.8rem;">Rinse muddlers immediately after use — citrus juices can dull the finish over time. Dry promptly. Treat timber stoppers with a light oil annually.</p>
