@@ -6,7 +6,85 @@
   <title>Acrylic &amp; Wood Pens — Plummo's Timber | Australian Timber Artisans</title>
   <meta name="description" content="Plummo's Timber — Acrylic &amp; Wood Pens. Handcrafted in Australia."/>
   <link rel="stylesheet" href="css/main.css"/>
-  
+  <style>
+    /* Pen card hover: wakes the photo up instead of just lifting the card */
+    .pen-card{
+      background:var(--iron);
+      border:1px solid rgba(255,255,255,0.06);
+      overflow:hidden;
+      position:relative;
+      transition:transform 0.3s, border-color 0.3s;
+    }
+    .pen-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(200,200,200,0.2);
+    }
+    .pen-card-media{
+      aspect-ratio:4/3;
+      background:var(--steel-dk);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .pen-card-img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      z-index:1;
+      transition:transform 0.5s ease, filter 0.5s ease;
+      filter:brightness(0.92) saturate(0.95);
+    }
+    .pen-card:hover .pen-card-img{
+      transform:scale(1.06);
+      filter:brightness(1.12) saturate(1.15);
+    }
+    .pen-card-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));
+      z-index:2;
+      transition:opacity 0.5s ease;
+      pointer-events:none;
+    }
+    .pen-card:hover .pen-card-overlay{
+      opacity:0.35;
+    }
+    .pen-card-badge{
+      position:absolute;
+      top:0.8rem;
+      left:0.8rem;
+      font-family:var(--mono);
+      font-size:0.5rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--chrome-hi);
+      background:rgba(200,200,200,0.1);
+      border:1px solid rgba(200,200,200,0.25);
+      padding:0.2rem 0.55rem;
+      z-index:3;
+    }
+    .pen-card-enquire{
+      font-family:var(--heading);
+      font-size:0.6rem;
+      font-weight:700;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:var(--black);
+      background:var(--grad-chrome);
+      padding:0.5rem 1rem;
+      text-decoration:none;
+      clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);
+      transition:opacity 0.2s;
+    }
+    .pen-card-enquire:hover{
+      opacity:0.85;
+    }
+  </style>
 </head>
 <body>
 <nav id="nav">
@@ -100,12 +178,11 @@
         </div>
 
         <div class="grid-3 reveal reveal-delay-2" style="gap:1.5rem;">
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/ACRYLIC - GREEN RED WHITE SWIRL - ROSE GOLD.jpg" alt="Acrylic - Red Green White Slimline" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <!-- <span style="position:relative;z-index:2;">🖊️</span> -->
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Best Seller</span>
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/ACRYLIC - GREEN RED WHITE SWIRL - ROSE GOLD.jpg" alt="Acrylic - Red Green White Slimline" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
+    <span class="pen-card-badge">Best Seller</span>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Acrylic Slimline - Green, Red & White Swirl  </div>
@@ -113,16 +190,14 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Refill not included</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$35 incl. Shipping</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/acrylic-swirl-fountain-pen.jpg" alt="Acrylic Swirl Fountain Pen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/acrylic-swirl-fountain-pen.jpg" alt="Acrylic Swirl Fountain Pen" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Acrylic Swirl Fountain Pen</div>
@@ -130,16 +205,14 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Fountain — converter incl.</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$85</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/red-mallee-burl-ballpoint.jpg" alt="Red Mallee Burl Ballpoint" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/red-mallee-burl-ballpoint.jpg" alt="Red Mallee Burl Ballpoint" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Red Mallee Burl Ballpoint</div>
@@ -147,16 +220,14 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Cross-style refill</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$75</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/camphor-laurel-slimline.jpg" alt="Camphor Laurel Slimline" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/camphor-laurel-slimline.jpg" alt="Camphor Laurel Slimline" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Camphor Laurel Slimline</div>
@@ -164,16 +235,15 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Parker-style refill</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$55</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/banksia-pod-pen.jpg" alt="Banksia Pod Pen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">One of a Kind</span>
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/banksia-pod-pen.jpg" alt="Banksia Pod Pen" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
+    <span class="pen-card-badge">One of a Kind</span>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Banksia Pod Pen</div>
@@ -181,16 +251,14 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Natural pod variations</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$70</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/acrylic-chrome-cigar.jpg" alt="Acrylic  Chrome Cigar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/acrylic-chrome-cigar.jpg" alt="Acrylic  Chrome Cigar" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Acrylic &amp; Chrome Cigar</div>
@@ -198,16 +266,14 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">7mm Parker refill</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$90</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/spotted-gum-rollerball.jpg" alt="Spotted Gum Rollerball" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/spotted-gum-rollerball.jpg" alt="Spotted Gum Rollerball" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Spotted Gum Rollerball</div>
@@ -215,16 +281,14 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Rollerball refill incl.</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$68</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/sheoak-twist-ballpoint.jpg" alt="Sheoak Twist Ballpoint" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/sheoak-twist-ballpoint.jpg" alt="Sheoak Twist Ballpoint" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Sheoak Twist Ballpoint</div>
@@ -232,16 +296,15 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Parker-style refill</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$62</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
-          <div style="background:var(--iron);border:1px solid rgba(255,255,255,0.06);overflow:hidden;position:relative;transition:transform 0.3s,border-color 0.3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(200,200,200,0.2)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,0.06)'">
-  <div style="aspect-ratio:4/3;background:var(--steel-dk);display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:0.2;position:relative;overflow:hidden;">
-    <img src="images/custom-pen-your-timber.jpg" alt="Custom Pen - Your Timber" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"/>
-    <span style="position:relative;z-index:2;">🖊️</span>
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg,transparent 40%,rgba(5,5,5,0.7));"></div>
-    <span style="position:absolute;top:0.8rem;left:0.8rem;font-family:var(--mono);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chrome-hi);background:rgba(200,200,200,0.1);border:1px solid rgba(200,200,200,0.25);padding:0.2rem 0.55rem;">Custom</span>
+          <div class="pen-card">
+  <div class="pen-card-media">
+    <img src="images/custom-pen-your-timber.jpg" alt="Custom Pen - Your Timber" class="pen-card-img"/>
+    <div class="pen-card-overlay"></div>
+    <span class="pen-card-badge">Custom</span>
   </div>
   <div style="padding:1.3rem 1.4rem;">
     <div style="font-family:var(--heading);font-size:0.95rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white-raw);margin-bottom:0.4rem;">Custom Pen — Your Timber</div>
@@ -249,7 +312,7 @@
     <div style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--timber-hi);margin-top:0.4rem;">Contact us to order</div>
     <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.05);padding-top:0.9rem;margin-top:0.9rem;">
       <span style="font-family:var(--display);font-size:1.4rem;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">From $55</span>
-      <a href="contact.html" style="font-family:var(--heading);font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--black);background:var(--grad-chrome);padding:0.5rem 1rem;text-decoration:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enquire →</a>
+      <a href="contact.html" class="pen-card-enquire">Enquire →</a>
     </div>
   </div>
 </div>
