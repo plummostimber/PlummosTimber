@@ -820,7 +820,7 @@
   </div>
 </section>
 
-<!-- NEWSLETTER -->
+<!-- NEWSLETTER
 <section class="newsletter">
   <div class="newsletter-content">
     <p class="tag" style="justify-content:center;">Stay in the Loop</p>
@@ -828,6 +828,49 @@
     <p class="reveal reveal-delay-1">New products, workshop stories, care tips and podcast updates — straight to your inbox. No spam. Just timber.</p>
     <form class="newsletter-form reveal reveal-delay-2">
       <input type="email" placeholder="your@email.com.au" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section> -->
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-content">
+    <p class="tag" style="justify-content:center;">Stay in the Loop</p>
+    
+    <h2 class="reveal">Get the <em>Good Stuff</em></h2>
+    
+    <p class="reveal reveal-delay-1">
+      New products, workshop stories, care tips and podcast updates — straight to your inbox. No spam. Just timber.
+    </p>
+
+    <form 
+      class="newsletter-form reveal reveal-delay-2"
+      action="https://formspree.io/f/mlgypqlk"
+      method="POST"
+    >
+      <!-- Email input -->
+      <input 
+        type="email" 
+        name="email"
+        placeholder="your@email.com.au" 
+        required 
+      />
+
+      <!-- Subject line -->
+      <input 
+        type="hidden" 
+        name="_subject" 
+        value="New Newsletter Signup"
+      />
+
+      <!-- Honeypot spam protection (hidden from users) -->
+      <input 
+        type="text" 
+        name="_gotcha" 
+        style="display:none"
+      />
+
       <button type="submit">Subscribe</button>
     </form>
   </div>
