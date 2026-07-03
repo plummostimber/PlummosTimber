@@ -837,42 +837,51 @@
 <!-- NEWSLETTER -->
 <section class="newsletter">
   <div class="newsletter-content">
-    <p class="tag" style="justify-content:center;">Stay in the Loop</p>
-    
+    <p class="tag" style="text-align:center;">Stay in the Loop</p>
+
     <h2 class="reveal">Get the <em>Good Stuff</em></h2>
-    
+
     <p class="reveal reveal-delay-1">
-      New products, workshop stories, care tips and podcast updates — straight to your inbox. No spam. Just timber.
+      New products, workshop stories, care tips and podcast updates — straight to your inbox.
+      No spam. Just timber.
     </p>
 
-    <form 
+    <!-- Success / Error Messages -->
+    <div class="form-status">
+      <p class="success" data-fs-success style="display:none;">
+        Thanks for subscribing 🌿
+      </p>
+      <p class="error" data-fs-error style="display:none;"></p>
+    </div>
+
+    <form
+      id="newsletter-form"
       class="newsletter-form reveal reveal-delay-2"
-      action="https://formspree.io/f/mlgypqlk"
-      method="POST"
     >
-      <!-- Email input -->
-      <input 
-        type="email" 
+      <input
+        type="email"
         name="email"
-        placeholder="your@email.com.au" 
-        required 
+        placeholder="your@email.com.au"
+        required
+        data-fs-field
       />
+      <span class="field-error" data-fs-error="email"></span>
 
-      <!-- Subject line -->
-      <input 
-        type="hidden" 
-        name="_subject" 
-        value="New Newsletter Signup"
-      />
+      <input type="hidden" name="message" value="Newsletter signup" />
+      <input type="hidden" name="_subject" value="New Newsletter Signup" />
 
-      <!-- Honeypot spam protection (hidden from users) -->
-      <input 
-        type="text" 
-        name="_gotcha" 
+      <!-- Honeypot -->
+      <input
+        type="text"
+        name="_gotcha"
         style="display:none"
+        tabindex="-1"
+        autocomplete="off"
       />
 
-      <button type="submit">Subscribe</button>
+      <button type="submit" data-fs-submit-btn>
+        Subscribe
+      </button>
     </form>
   </div>
 </section>
@@ -932,5 +941,18 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<script>
+  window.formspree = window.formspree || function () {
+    (formspree.q = formspree.q || []).push(arguments);
+  };
+  formspree('initForm', {
+    formElement: '#newsletter-form',
+    formId: 'mlgypqlk'
+  });
+</script>
+
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 </body>
 </html>
