@@ -82,19 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── CONTACT FORM MOCK SUBMIT
-  document.querySelector('#contact-form')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type=submit]');
-    btn.textContent = 'Message Sent ✓';
-    btn.style.background = '#5a6b4a';
-    btn.style.color = '#e8e4df';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      btn.style.color = '';
-      this.reset();
-    }, 3500);
-  });
+  //document.querySelector('#contact-form')?.addEventListener('submit', function(e) {
+    //e.preventDefault();
+    //const btn = this.querySelector('button[type=submit]');
+    //btn.textContent = 'Message Sent ✓';
+    //btn.style.background = '#5a6b4a';
+    //btn.style.color = '#e8e4df';
+    //setTimeout(() => {
+     // btn.textContent = 'Send Message';
+      //btn.style.background = '';
+      //btn.style.color = '';
+      //this.reset();
+    //}, 3500);
+  //});
 
   // ── COMMUNITY DISCUSSION FORM
   document.querySelector('#discussion-form')?.addEventListener('submit', function(e) {
