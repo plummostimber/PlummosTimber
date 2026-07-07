@@ -29,15 +29,17 @@
     <div style="background:var(--charcoal);border:1px solid rgba(255,255,255,.06);border-top:2px solid var(--silver);padding:2.5rem;">
       <h3 style="font-family:var(--display);font-size:1.8rem;color:var(--white-raw);margin-bottom:.3rem;">Send a Message</h3>
       <p style="font-family:var(--serif);font-size:.85rem;color:var(--chrome-dk);margin-bottom:1.8rem;">Every message gets a personal reply from the workshop.</p>
-      <form id="contact-form">
-        <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" placeholder="Your name" required/></div><div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"/></div></div>
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com.au" required/></div>
-        <div class="form-group"><label>Phone (Optional)</label><input type="tel" placeholder="04xx xxx xxx"/></div>
-        <div class="form-group"><label>Enquiry Type</label><select required><option value="">Select a topic...</option><option>Custom Order / Commission</option><option>Wholesale / Stockist Enquiry</option><option>Product Question</option><option>Timber Bros Podcast</option><option>Press / Media</option><option>General Enquiry</option></select></div>
-        <div class="form-group"><label>Message</label><textarea placeholder="Tell us what you're after — the more detail the better..." style="min-height:140px;" required></textarea></div>
-        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;"><input type="checkbox" id="nl" style="width:16px;height:16px;accent-color:var(--silver);cursor:pointer;"/><label for="nl" style="font-family:var(--serif);font-size:.82rem;color:var(--chrome);cursor:pointer;">Subscribe me to the Plummo's newsletter</label></div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
-      </form>
+      <div data-fs-success style="display:none;background:rgba(90,107,74,.12);border:1px solid rgba(90,107,74,.4);border-left:3px solid #5a6b4a;padding:1rem 1.2rem;margin-bottom:1.2rem;font-family:var(--serif);font-size:.85rem;color:var(--silver);"></div>
+<div data-fs-error style="display:none;background:rgba(180,60,60,.1);border:1px solid rgba(180,60,60,.4);border-left:3px solid #b43c3c;padding:1rem 1.2rem;margin-bottom:1.2rem;font-family:var(--serif);font-size:.85rem;color:var(--silver);"></div>
+<form id="contact-form">
+  <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Your name" data-fs-field required/><span data-fs-error="firstName" style="color:#c96a5a;font-size:.75rem;display:block;margin-top:.3rem;"></span></div><div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Last name" data-fs-field/><span data-fs-error="lastName" style="color:#c96a5a;font-size:.75rem;display:block;margin-top:.3rem;"></span></div></div>
+  <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com.au" data-fs-field required/><span data-fs-error="email" style="color:#c96a5a;font-size:.75rem;display:block;margin-top:.3rem;"></span></div>
+  <div class="form-group"><label>Phone (Optional)</label><input type="tel" name="phone" placeholder="04xx xxx xxx" data-fs-field/><span data-fs-error="phone" style="color:#c96a5a;font-size:.75rem;display:block;margin-top:.3rem;"></span></div>
+  <div class="form-group"><label>Enquiry Type</label><select name="enquiryType" data-fs-field required><option value="">Select a topic...</option><option>Custom Order / Commission</option><option>Wholesale / Stockist Enquiry</option><option>Product Question</option><option>Timber Bros Podcast</option><option>Press / Media</option><option>General Enquiry</option></select><span data-fs-error="enquiryType" style="color:#c96a5a;font-size:.75rem;display:block;margin-top:.3rem;"></span></div>
+  <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us what you're after — the more detail the better..." style="min-height:140px;" data-fs-field required></textarea><span data-fs-error="message" style="color:#c96a5a;font-size:.75rem;display:block;margin-top:.3rem;"></span></div>
+  <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;"><input type="checkbox" id="nl" name="newsletter" value="yes" style="width:16px;height:16px;accent-color:var(--silver);cursor:pointer;"/><label for="nl" style="font-family:var(--serif);font-size:.82rem;color:var(--chrome);cursor:pointer;">Subscribe me to the Plummo's newsletter</label></div>
+  <button type="submit" class="btn btn-primary" data-fs-submit-btn style="width:100%;justify-content:center;">Send Message →</button>
+</form>
     </div>
   </div>
 </div></div></section>
